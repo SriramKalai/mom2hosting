@@ -267,7 +267,7 @@ function gridproduct(filterobject){
 
   filterobject.products.forEach(product => {
     template += `
-    <div class="flex m-w-295 w-full  m-h-405 h-full bg-white flex-col border-[1px] rounded-md border-[#DEE2E7]">
+    <div class="flex m-w-295 w-full  m-h-405 h-full bg-white flex-col border-[1px] rounded-md border-[#DEE2E7] cursor-pointer">
       <div class="flex justify-center lg:block">
         <div class="flex w-[130px] h-[130px]  md:w-[180px] lg:w-230 md:h-230 justify-center lg:pl-[50px] lg:pr-0 lg:pt-[2rem] lg:pb-[0px]">
           <img src="${product.image_url}" alt="${product.product_name}">
@@ -645,7 +645,7 @@ for (var i = 0; i < btns.length; i++) {
     
   function  flexproduct(filterobject){
     let template = `
-      <div class="all_product">
+      <div class="all_product cursor-pointer">
       ${filterobject.products.map(product => `
       <div class="card_outer">    
       <div class="image_outer ">
