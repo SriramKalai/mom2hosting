@@ -17,6 +17,7 @@ window.addEventListener('load', function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
+  // fetchAllData()
   likefetchData();
   mobilefetchData();
   fetchData();
@@ -79,6 +80,49 @@ function likefetchData() {
     });
 }
 // document.addEventListener("DOMContentLoaded", likefetchData);
+
+
+// all fecth all one
+// function fetchData(url) {
+//   return fetch(url)
+//     .then(response => response.json())
+//     .catch(error => console.log('Error:', error));
+// }
+
+
+// function fetchAllData() {
+//   const urls = [
+//    'https://crazy-sun-hat-cod.cyclic.app/like',
+//    'https://crazy-sun-hat-cod.cyclic.app/mobile',
+//    'https://crazy-sun-hat-cod.cyclic.app/products'
+//   ];
+
+//   const promises = urls.map(url => fetchData(url));
+
+//   // Use Promise.all() to handle multiple asynchronous requests
+//     Promise.all(promises)
+//     .then(data => {
+
+//       // Store the fetched data in separate variables
+//       likedata = data[0];
+//       mobiledata = data[1];
+//       products = data[2];
+
+//     });
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1698,6 +1742,8 @@ function createProductCard(product) {
 // Populate product cards
 const productContainer = document.getElementById("likeproductContainer");
 function like(){
+  const skeletonLoader = document.querySelector('.skeleton-loader-like');
+  skeletonLoader.classList.add('hidden');
   likedata.forEach(product => {
     const card = createProductCard(product);
     productContainer.appendChild(card);
@@ -1713,4 +1759,5 @@ function blueheartbutton(x) {
     }
     buttonblue.classList.toggle("active");
     buttonblue.classList.toggle("inactive");
+
   };
