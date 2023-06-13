@@ -190,7 +190,7 @@ function gridView(){
   productCard.classList.remove("mt-[-25px]");
   productCard.classList.add("mt-20px]");
 
-  const active=document.getElementById("listview");
+  const active=document.querySelector(".listview");
   active.classList.remove("active");
   
   
@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             filterobject=productfilter(arr,perpage,pageNumber);
 
-            const buttonstatus=document.querySelector('#listview');
+            const buttonstatus=document.querySelector(".listview");
             const value=buttonstatus.classList.contains("active");
             if (value){
             listView(filterobject);
@@ -512,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function() {
               }
               filterobject=productfilter(arr,perpage,pageNumber);
 
-              const buttonstatus=document.querySelector('#listview');
+              const buttonstatus=document.querySelector(".listview");
               const value=buttonstatus.classList.contains("active");
               if (value){
               listView(filterobject);
@@ -685,7 +685,7 @@ for (var i = 0; i < btns.length; i++) {
               lastpage();
               filterobject=productfilter(arr,perpage,pageNumber);
   
-              const buttonstatus=document.querySelector('#listview');
+              const buttonstatus=document.querySelector(".listview");
               const value=buttonstatus.classList.contains("active");
               if (value){
               listView(filterobject);
@@ -963,7 +963,7 @@ function starrating(x){
   }
   filterobject=productfilter(arr,perpage,pageNumber);
 
-  const buttonstatus=document.querySelector('#listview');
+  const buttonstatus=document.querySelector(".listview");
   const value=buttonstatus.classList.contains("active");
   if (value){
   listView(filterobject);
@@ -1040,7 +1040,7 @@ applyButton.addEventListener('click', function() {
   lastpage();
   filterobject=productfilter(arr,perpage,pageNumber);
   
-  const buttonstatus=document.querySelector('#listview');
+  const buttonstatus=document.querySelector(".listview");
   const value=buttonstatus.classList.contains("active");
   if (value){
   listView(filterobject);
@@ -1069,7 +1069,7 @@ function verifyContent() {
   console.log(arr);
   filterobject=productfilter(arr,perpage,pageNumber);
   
-  const buttonstatus=document.querySelector('#listview');
+  const buttonstatus=document.querySelector(".listview");
   const value=buttonstatus.classList.contains("active");
   if (value){
   listView(filterobject);
@@ -1145,7 +1145,7 @@ function filterProducts() {
   //   productListContainer.appendChild(productElement);
   // }
 
-  const buttonstatus=document.querySelector('#listview');
+  const buttonstatus=document.querySelector(".listview");
   const value=buttonstatus.classList.contains("active");
   if (value){
   listView(filterobject);
@@ -1175,7 +1175,7 @@ var dropdown = document.getElementById("feaDropdown");
       console.log("Featured option selected");
     }
     filterobject=productfilter(arr,perpage,pageNumber);  
-    const buttonstatus=document.querySelector('#listview');
+    const buttonstatus=document.querySelector(".listview");
     const value=buttonstatus.classList.contains("active");
     if (value){
     listView(filterobject);
@@ -1209,7 +1209,7 @@ var dropdown = document.getElementById("feaDropdown");
     lastpage();
     firstpage();
     filterobject=productfilter(arr,perpage,pageNumber);  
-    const buttonstatus=document.querySelector('#listview');
+    const buttonstatus=document.querySelector(".listview");
     const value=buttonstatus.classList.contains("active");
     if (value){
     listView(filterobject);
@@ -1236,7 +1236,7 @@ var dropdown = document.getElementById("feaDropdown");
     lastpage();
     firstpage();
     filterobject=productfilter(arr,perpage,pageNumber);  
-    const buttonstatus=document.querySelector('#listview');
+    const buttonstatus=document.querySelector(".listview");
     console.log(buttonstatus.classList)
     const value=buttonstatus.classList.contains("active");
 
@@ -1260,7 +1260,7 @@ var dropdown = document.getElementById("feaDropdown");
     lastpage();
     firstpage();
     filterobject=productfilter(arr,perpage,pageNumber);  
-    const buttonstatus=document.querySelector('#listview');
+    const buttonstatus=document.querySelector(".listview");
     const value=buttonstatus.classList.contains("active");
     if (value){
     listView(filterobject);
@@ -1379,7 +1379,7 @@ var dropdown = document.getElementById("feaDropdown");
               }
               filterobject=productfilter(arr,perpage,pageNumber);
   
-              const buttonstatus=document.querySelector('#listview');
+              const buttonstatus=document.querySelector(".listview");
               const value=buttonstatus.classList.contains("active");
               if (value){
               listView(filterobject);
@@ -1518,7 +1518,7 @@ function renderItems() {
     lastpage();
     filterobject=productfilter(arr,perpage,pageNumber);
 
-    const buttonstatus=document.querySelector('#listview');
+    const buttonstatus=document.querySelector(".listview");
     const value=buttonstatus.classList.contains("active");
     if (value){
     listView(filterobject);
