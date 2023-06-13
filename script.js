@@ -7,11 +7,11 @@ const categoryList = document.querySelector('.category-list');
 // const productCard_mobile=document.querySelector('.productsmobile')
 
 // skeleton
-const allSkeleton = document.querySelectorAll('.skeleton')
+const allSkeleton = document.querySelectorAll('.brand-sel')
 
 window.addEventListener('load', function() {
   allSkeleton.forEach(item=> {
-    item.classList.remove('skeleton')
+    item.classList.remove('brand-sel')
   })
 })
 
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data.forEach(product => {
         brandSet.add(product.Brand);
       });
-
+      const skeletonLoader = document.querySelector('.skeleton-loader');
       const brandList = document.getElementById('brandList');
       const seeMoreBtn = document.getElementById('seeMoreBtn');
       const showLessBtn = document.getElementById('showLessBtn');
@@ -467,6 +467,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Initial display
       displayBrands(0, displayCount);
       updateButtonVisibility();
+      skeletonLoader.classList.add('hidden');
     })
     .catch(error => console.error(error));
 });
@@ -489,6 +490,7 @@ document.addEventListener("DOMContentLoaded", function() {
           conditionSet.add(product.condition);
         });
 
+        const skeletonLoader = document.querySelector('.skeleton-loader-con');
         const conditionList = document.getElementById('conditionList');
         const uniqueConditions = Array.from(conditionSet);
         uniqueConditions.sort();
@@ -564,6 +566,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         displayConditions();
+        skeletonLoader.classList.add('hidden');
       })
       .catch(error => console.error(error));
   });
@@ -679,7 +682,7 @@ for (var i = 0; i < btns.length; i++) {
               }
           });          
         });
-  
+        const skeletonLoader = document.querySelector('.skeleton-loader-fea');
         const featureList = document.getElementById('FeatureList');
         const seeMoreBtn = document.getElementById('seeMoreBtnfea');
         const showLessBtn = document.getElementById('showLessBtnfea');
@@ -798,6 +801,7 @@ for (var i = 0; i < btns.length; i++) {
         // Initial display
         displayBrands(0, displayCount);
         updateButtonVisibility();
+        skeletonLoader.classList.add('hidden');
       })
       .catch(error => console.error(error));
   });
