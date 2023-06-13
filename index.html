@@ -1,0 +1,552 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body class="bg[#F7FAFC]"> 
+        <!-- mobile view -->
+        <div class="flex bg-white h-[56px] items-center lg:hidden">
+            <div class="flex mr-[20px] ml-[20px] bg-white w-full justify-between">
+                <div class="mt-[6px] ml-[-1px]"><img src="images/mobile_arrow.svg" class="w-[16px] h-[16px]"></div>
+                <div class="font-inter font-semibold text-[18px]">Mobile accessory </div>
+                <div class="flex gap-[30px] mt-[4px]">
+                    <div><img src="images/cart_mobile.svg" class="w-[20px] h-[20px] ml-[44px]"></div>
+                    <div><img src="images/profile_mobile.svg" class="w-[16px] h-[16px] mt-[1px]"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="flex justify-center pl-[15px] pr-[15px] h-[40px] lg:hidden">
+            <div class="flex w-full">
+                <input class="border-[2px] border-[#DEE2E7] rounded-md w-full px-4 py-2 bg-#F7FAFC" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="flex justify-start pl-[16px] mt-[16px] lg:hidden">
+            <div class="scrollbar">
+                <div id="mobileButtons" class="flex space-x-1"></div>
+            </div>
+        </div>
+        <div class="flex w-full border-t-[2px] border-[#DEE2E7] mt-[18px] h-[50px] border-b-[2px] px-[10px] justify-between items-center gap-[1px] lg:hidden shrink-0">
+            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md ">
+                <div class="flex items-center  justify-center text-center gap-[10px]">
+                <p class="mr-[5px] text-inter text-[16px]">Sort: New</p>
+                <img src="images/sort.svg" class="w-[13px] h-[9px] ">
+                </div>
+            </button>  
+            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md shrink-0">
+                <div class="flex items-center  justify-center text-center gap-[10px]">
+                <p class="mr-[5px] text-inter text-[16px]">Filter (3)</p>
+                <img src="images/filter.svg" class="w-[20px] h-[20px] ">
+                </div>
+            </button>       
+            <div class="flex">
+                <button class="btn cursor-pointer bg-white  w-[30px] h-[30px] border-[1px] rounded-l" onclick="gridView()"><i class="fa fa-th-large w-[15px] h-[15px]"></i></button>
+                <button class="btn cursor-pointer bg-white active w-[30px] h-[30px] border-[1px] rounded-r" onclick="listView(filterobject)" id="listview"><i class="fa fa-bars w-[15px] h-[15px]"></i></button> 
+            </div>
+        </div>
+
+
+   <!--[#F7FAFC]-->
+    <!-- <div class="h-[86px] bg-[#FFFFFF] hidden lg:block ">
+        <div class="flex justify-center">
+            <div class="max-w-[1180px]">
+                <div class="flex py-4 justify-around">
+                    <div class="brandlogo flex mt-1 shrink-0">
+                        <img src="images/brand_logo.png" class="w-[150px]">
+                    </div>
+                    <div class="searchbar flex items-center mt-1 grow">
+                        <input type="text" placeholder="Search" class="font-inter max-w-[421px] w-[50%] h-10 p-2 border-t-2 border-l-2 border-b-2 border-logo rounded-l focus:outline-none focus:ring focus:border-blue-300">
+                        <select class=" p-2 max-w-145 h-10  border-logo rounded-none rounded-r-l bg-gray-100 border-t-2 border-l-2 border-b-2">
+                            <option value="all" class="text-base">All Category</option>
+                            <option value="category1" class="text-base">Category 1</option>
+                            <option value="category2" class="text-base">Category 2</option>
+                            <option value="category3" class="text-base">Category 3</option>
+                        
+                        </select>
+                        <button class="w-100 h-10 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-r font-inter">Search</button>
+                    </div>
+                    <div class="allicons flex gap-4 mt-2">
+                        <div class="flex flex-col">
+                            <img class="h-5 w-5 mt-[1px]" src="images/profile.svg">
+                            <span class="text-[#8B96A5] text-xs font-inter mt-[6px] ml-[-8px]">Profile</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img class="h-5 w-5 ml-[24px]" src="images/message.svg">
+                            <span class="text-[#8B96A5] text-xs mt-[6px] ml-[7px] font-inter">Message</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img class="h-[22px] w-[22px]  ml-[10px]" src="images/wishlist.svg">
+                            <span class="text-[#8B96A5] text-xs mt-[6px] font-inter">Orders</span>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <img class="h-[21px] w-[22px] ml-[15px] mt-[0px]" src="images/cart.svg">
+                            <span class="text-[#8B96A5] text-xs ml-[3px] mt-[7px] font-inter">My cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    -->
+    
+    <div class="bg-#FFFFFF justify-center items-center hidden lg:flex px-[20px]">
+        <div class="flex justify-between items-center lg:max-w-[1180px] w-full pt-[22px] pb-[22px]">
+            <div class="flex w-full items-center">
+                <div class="w-[120px] lg:w-[150px]">
+                    <img src="images/brand_logo.png">
+                </div>
+                <div class="flex border border-[#0D6EFD] border-solid rounded-lg flex-1 md:ml-[23px] lg:ml-[46px] max-w[670px] lg:mt-[-2px]">
+                    <input type="text" placeholder="Search" class="border border-[#0D6EFD] border-solid p-[10px] rounded-s-lg placeholder-gray-500 font-normal flex-1">
+                    <select class="border border-[#0D6EFD] border-solid w-[145px] px-[10px] ">
+                        <option class="font-inter text-[16px] cursor-pointer text-[#1C1C1C]">All Category</option>
+                    </select>
+                    <button class="cursor-pointer py-[10px] lg:mt[-2px] px-[23px] bg-[#0D6EFD] font-inter text-[16px] text-white rounded-e-lg border border-[#0D6EFD] border-solid">Search</button>
+                </div>
+            </div>
+            <div class="flex gap-[24px] md:ml-[44px] lg:ml-[87px] w-[230px] shrink-0 cursor-pointer">
+                <div class="flex flex-col gap-2 items-center text-xs text-gray-500">
+                    <img class="w-[20px]" src="images/profile.svg">
+                    <div>Profile</div>
+                </div>
+                <div class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
+                    <img src="images/message.svg">
+                    <div>Message</div>
+                </div>
+                <div class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
+                    <img src="images/wishlist.svg">
+                    <div class="mt-[2px]">Orders</div>
+                </div>
+                <div class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
+                    <img src="images/cart.svg">
+                    <div>My cart</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+    <hr class="h-[1px] bg-[#E0E0E0] hidden lg:block">
+    <!-- Two header -->
+    <div class="flex justify-center pl-[20px] pr-[20px]">
+        <div class="bg-[#ffffff] hidden lg:block max-w-[1180px] w-full">
+            <div class=" h-[52px] ">
+                <div class="flex py-4 justify-between">
+                    <div class="flex justify-center gap-10 w-fit">
+                        <ul class="flex">
+                            <li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[16px]"src="images/menu.svg"></button></li>
+                            <li class="text-menutext font-inter font-medium ml-[7px] mt-[-1px] cursor-pointer">All category</li>
+                            <li class="text-menutext font-inter font-medium  ml-[27px] mt-[-1px] cursor-pointer">Hot offers</li>
+                            <li class="text-menutext font-inter font-medium  ml-[29px] mt-[-1px] cursor-pointer">Gift boxes</li>
+                            <li class="text-menutext font-inter font-medium  ml-[29px] mt-[-1px] cursor-pointer">Projects</li>
+                            <li class="text-menutext font-inter font-medium  ml-[28px] mt-[-1px] cursor-pointer">Menu item</li>
+                            <li class="text-menutext font-inter font-medium  ml-[24px] mt-[-1px] cursor-pointer">
+                                <select>
+                                    <option value="all">Help</option>
+                                    <option value="category1">help</option>
+                                    <option value="category2">help</option>
+                                    <option value="category3">help</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <div class="flex gap-[54px] ">
+                        <div class="flex justify-center font-inter text-[#1C1C1C] text-[16px] font-medium ">
+                            <select class="cursor-pointer">
+                                <option value="all">English, USD</option>
+                                <option value="category1">English, US</option>
+                                <option value="category2">English, UK</option>
+                                <option value="category3">Tamil, India</option>
+                            </select> 
+                        </div>
+                       
+                        <div>     
+                            <span class="font-inter text-[#1C1C1C] text-[16px] font-medium cursor-pointer" >Ship to</span>                      
+                            <select class="cursor-pointer">
+                                <option value="all">&#127937</option>
+                                <option value="category1">&#127937</option>
+                                <option value="category2">&#127937</option>
+                                <option value="category3">&#127937</option>
+                            </select>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <hr class="h-[1px] bg-[#E0E0E0] hidden lg:block">
+    
+    <!-- bread crumbs -->
+     
+    
+    <div class="justify-center flex lg:pl-[20px] lg:pr-[20px]">
+        <div class="flex flex-col justify-center max-w-[1180px] w-full">
+            <div class="flex justify-start">
+                <div class="flex">
+                    <ul class="breadcrumb mt-[21px] hidden lg:block">
+                        <li class="font-inter text-[#8B96A5] mr-[3px] text-[16px] tracking-[-0.2px]"><a href="#">Home</a></li>
+                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]"><a href="#">Clothings</a></li>
+                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]"><a href="#">Men’s wear</a></li>
+                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]">Summer clothing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex  justify-center">         
+             <!-- left side container -->
+                <div class="flex-col hidden lg:flex lg:w-[227px] lg:mt-[-2px]">
+                    <div class="flex flex-col">
+                        <hr class="mt-[20px] h-[1px] bg-[#E0E0E0]">
+                        <div class="flex justify-between">
+                            <div class="font-semibold inline-block mt-[11px] font-inter text-[16px] mb-[20px] text-[#1C1C1C]">Category</div>
+                            <img class="catdownbtn mt-[18px]  w-[12px] h-[8px] cursor-pointer hidden" onclick="catshowcontent()"  src="images/down_arrow.svg">
+                            <img class="catupbtn mt-[20px] w-[12px] h-[8px] cursor-pointer" onclick="cathidecontent()" src="images/up_arrow.svg">
+                        </div>
+                        <div class="category">      
+                            <ul class="category-list"></ul>
+                        </div>
+                    </div>
+                    <hr class="mt-[24px] h-[1px] bg-[#E0E0E0]">
+                    <div class="flex flex-col">
+                        <div class="flex justify-between ">
+                            <div class="font-semibold inline mt-[10px] font-inter text-[16px] mb-[22px] ml-[2px]">Brands</div>
+                            <img class="branddownbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer  hidden" onclick="brandshowcontent()"  src="images/down_arrow.svg">
+                            <img class="brandupbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="brandhidecontent()" src="images/up_arrow.svg">
+                        </div>        
+                            <div class="brands ml-[4px]">
+                                <ul id="brandList"></ul>
+                                <p id="seeMoreBtn" class="text-textsee font-inter text-[16px] cursor-pointer  ml-[-1px]">See all</p>
+                                <p id="showLessBtn" style="display: none; " class="text-textsee font-inter text-[16px] cursor-pointer">Show Less</p>      
+                            </div>              
+                    </div>
+                    <hr class="mt-[24px] h-[1px] bg-[#E0E0E0]">
+                    <div class="flex flex-col">
+                        <div class="flex justify-between">
+                            <div class="font-semibold inline-block mt-[10px] ml-[4px] font-inter text-[16px] mb-[21px]">Features</div>
+                            <img class="featuredownbtn mt-[18px] ml-12 w-[12px] h-[8px] cursor-pointer  hidden" onclick="featureshowcontent()"  src="images/down_arrow.svg">
+                            <img class="featureupbtn mt-[18px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="featurehidecontent()" src="images/up_arrow.svg">
+                        </div>
+                        <div class="feature">
+                            <ul id="FeatureList"></ul>
+                            <p id="seeMoreBtnfea" class="text-textsee font-inter text-[16px] mt-[-2px] ml-[4px] cursor-pointer">See all</p>
+                            <p id="showLessBtnfea" style="display: none;" class="text-textsee font-inter text-[16px] mt-[-2px] ml-[4px] cursor-pointer">Show Less</p> 
+                        </div>
+                    </div>            
+                    <hr class="mt-[25px] h-[1px] bg-[#E0E0E0]">
+                    <div class="flex flex-col ">
+                        <div class="flex justify-between">
+                            <div class="font-semibold inline-block  mt-[11px] ml-[4px] font-inter text-[16px] mb-[21px]">Price range</div>
+                            <img class="pricedownbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer hidden " onclick="priceshowcontent()"  src="images/down_arrow.svg">
+                            <img class="priceupbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer" onclick="pricehidecontent()" src="images/up_arrow.svg">
+                        </div>
+                        <div class="pricesilde">
+                            <!-- <ul id="df">pricetag</ul> -->
+                            <div class="wrapper w-[232px] ml-[4px] mt-[-33px]">                     
+                                <div class="slider">
+                                <div class="progress"></div>
+                                </div>
+                                <div class="range-input">
+                                    <input type="range" class="range-min" min="0" max="1000" value="0" step="50">
+                                    <input type="range" class="range-max" min="0" max="1000" value="1000" step="50">
+                                </div>
+                                <div class="price-input">
+                                    <div class="flex mt-[30px]">
+                                    
+                                        <div class="field">
+                                            <div class="min mt-[-5px] ml[-84px] font-inter">Min</div>
+                                            <input type="number" class="input-min p-[10px]" value="0">
+                                        </div>          
+                                        <div class="field" id="maxfield">
+                                            <div class="ml-[-1px] mt-[-5px]">Max</div>
+                                            <input type="number" class="input-max p-[10px]" value="1000">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="apply-button">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-[19px] h-[1px] bg-[#E0E0E0]">
+                    <div class="flex flex-col">
+                        <div class="flex justify-between">
+                            <div class="font-semibold inline-block font-inter text-[16px] mb-[19px] mt-[13px] ml-[2px]">Condition</div>
+                            <img class="downbtn mt-[21px] ml-12 w-[12px] h-[8px] cursor-pointer hidden " onclick="showcontent()"  src="images/down_arrow.svg">
+                            <img class="upbtn mt-[21px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="hidecontent()" src="images/up_arrow.svg">
+                        </div>
+                        <ul id="conditionList" class="ml-[7px]"></ul>
+                    </div>
+                    
+                    <hr class="mt-[11px] h-[1px] bg-[#E0E0E0]">
+                    <div class="flex flex-col mt-4">
+                        <div class="flex justify-between">
+                            <div class="font-bold inline-block font-inter text-[16px] mt-[-5px] ml-[4px]">Ratings</div>
+                            <img class="ratingdownbtn mt-[3px] ml-12w-[12px] h-[8px] cursor-pointer hidden" onclick="ratingshowcontent()"  src="images/down_arrow.svg">
+                            <img class="ratingupbtn mt-[3px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="ratinghidecontent()" src="images/up_arrow.svg">
+                        </div> 
+                        <div class="star ml-[5px] mt-[11px]">
+                            <div class="starrating flex mt-2">
+                                <input type="checkbox" value="five" onclick="starrating(5)" id="5" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <!-- <div class="starbox"></div> -->
+                                <div onclick="starrating(5);buttonchange(5);">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div> 
+                            <div class="flex">
+                                <input type="checkbox" value="four" onclick="starrating(4)" id="4" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <div onclick="starrating(4);buttonchange(4);">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star emptystar"></span>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <input type="checkbox" value="three" onclick="starrating(3)" id="3" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <div onclick="starrating(3);buttonchange(3);">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star emptystar"></span>
+                                    <span class="fa fa-star emptystar"></span>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <input type="checkbox" value="two" onclick="starrating(2)" id="2" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <div  onclick="starrating(2);buttonchange(2);">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star emptystar"></span>
+                                    <span class="fa fa-star emptystar"></span>
+                                    <span class="fa fa-star emptystar"></span>
+                                </div>
+                            </div>  
+                        </div> 
+                        <hr class="mt-4 h-[1px] bg-[#E0E0E0]">     
+                    </div>
+                    
+                    <div class="flex flex-col mt-4">
+                        <div class="flex justify-between ">
+                            <div class="font-bold inline-block font-inter text-[16px] mb-[21px]">Manufacture</div>
+                            <img class="mandownbtn mt-[4px] ml-12w-[12px] h-[8px] cursor-pointer " onclick="manshowcontent()"  src="images/down_arrow.svg">
+                            <img class="manupbtn mt-[4px] ml-12 w-[12px] h-[8px] cursor-pointer hidden" onclick="manhidecontent()" src="images/up_arrow.svg">
+                        </div>        
+                            <div class="manu hidden">
+                                <ul id="manuList"></ul>
+                                <p id="manseeMoreBtn" class="text-textsee">See all</p>
+                                <p id="manshowLessBtn" style="display: none;" class="text-textsee">Show Less</p>      
+                            </div>              
+                    </div>
+                    <hr class="mt-1">
+    
+                </div>
+            
+    
+            <!-- products container -->
+                <div class="lg:ml-8 w-full">
+                    <!-- product header -->
+                    <div class="hidden lg:flex justify-between max-w-[920px] w-full h-16 bg-white items-center mt-[18px] border-[1px] rounded-md border-[#DADADA]">
+                        <div class="ml-[24px]">
+                            <span class="totalitems font-inter"></span>
+                            <span class="font-inter">items in </span><span class="font-bold font-inter">Mobile accessory</span>
+                        </div>
+                        <div class="flex">
+                            <div class="flex items-start justify-start mt-[2px]">
+                              
+                                    <input class="w-[20px] h-[20px]  mt-[5px]  rounded-[6px] cursor-pointer font-inter text-[#1C1C1C]" type="checkbox" id="verificationCheckbox" onclick=" verifyContent()"> <span class="ml-[14px] mt-[4px]">Verified only</span>
+                             
+                            </div>
+                        
+                            <div>
+                                <div class="ml-[22px]">
+                                    <select id="feaDropdown" class="w-[172px] h-[40px] border-[1px] rounded-md border-[#DADADA] px-[6px] pb-[3px] cursor-pointer">                            
+                                        <option value="featured" class="font-inter text-[16px]">Featured</option>
+                                        <option value="all" class="font-inter text-[16px]">All</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <div>
+                                <div id="btnContainer" class="ml-[7px] flex mr-[7px]">
+                                    <button class="btn cursor-pointer bg-white w-[40px] h-[38px] border-[1px] rounded-l" onclick="gridView()"><i class="fa fa-th-large"></i></button>
+                                    <button class="btn cursor-pointer bg-white active w-[40px] h-[38px] border-[1px] rounded-r" onclick="listView(filterobject)" id="listview"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                        
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="flex">
+                        <div id="content" class="flex flex-wrap "></div>
+                        <p id="clearButton" class="ml-2 mt-[26px] text-blue-500 cursor-pointer font-bold hidden font-inter">Clear all filter</p>
+                    </div>
+                
+                    <br>
+    
+    
+    
+                    <!-- product list -->
+                    
+                    <div class="products mt-[-25px]">
+            
+                    </div>    
+                </div>        
+            </div>
+        </div>
+    </div> 
+    <br><br>
+     <!-- page details -->
+     <div class="justify-end hidden lg:flex mt-[-2px]">
+        <div class="flex mr-32  mt-[-15px]">
+        <div class="flex">
+            <select id="perpageproduct" class="w-[125px] h-[40px]  font-inter text-[16px] border-2 border-[#DEE2E7] rounded-md px-[6px] py-[3px] ">
+                <option value="six">Show 6</option>
+                <option value="ten">Show 10</option>
+                <option value="fiften" >Show 15</option>
+                <option value="twenty" >Show 20</option>
+            </select>
+            <button class="bg-white w-44px h-10 ml-[9px]  flex justify-center items-center border-2 border-[#DEE2E7] rounded-md" id="leftpagebutton">
+                <img src="images/left_arrow.svg" class="notactiveleft w-[8px] h-[16px]">
+                <img class="activeleft hidden w-[14px] h-[16px]" src="images/left_active.svg">                          
+            </button>
+            <div id="pageNumbers" class="mt-2 flex"></div>
+            <button class="bg-white w-44px h-10 flex justify-center items-center border-2 border-[#DEE2E7] rounded-md ml-[-2px]" id="rightpagebuttton">
+                <img class="activeright w-[8px] h-[16px]" src="images/right_arrow.svg">
+               <img class="notactiverigth hidden w-[14px] h-[16px]" src="images/right_notactive.svg">       
+            </button>
+        </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- email subscribe -->
+    <div class="bg-[#EFF2F4] w-full h-[190px] mt-[-6px] hidden lg:block">
+        <div class="flex  flex-col items-center justify-center py-10">
+            <div class="mb-2 font-inter text-[20px] font-semibold tracking-[-0.2px] mt-[-2px]">
+                <span>Subscribe on our newsletter</span>
+            </div>
+            <div class="mb-4 mt-[-10px] font-inter text-[16px] tracking-[-0.2px]">
+                <span>Get daily news on upcoming offers from many suppliers all over the world</span>
+            </div>
+            <div class="mt-[6px]">
+                <input type="text" placeholder="&#9993Email" class="w-[274px] h-[40px] p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                <button class="bg-blue-500 hover:bg-blue-600 text-white  rounded-md w-[110px] h-[40px] ml-[4px] text-[16px]">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="justify-center  hidden lg:flex px-[20px]">
+        <div class="bg-white  h-[256px]">            
+            <div class="flex mt-10 gap-[43px]">
+                <div class="flex flex-col mt-[4px]">
+                    <img src="images/brand_logo.png" class="max-w-[150px]">
+                    <div class="mt-4 font-inter text-[16px] tracking-[-0.2px] h-10px">
+                        <div class="flex">
+                            <p class="overflow-hidden max-h-[3.9rem] leading-[1.3rem] tracking-[-0.2px] w-[278px]">Best information about the company gies here but now lorem ipsum is</p>  
+                        </div>                     
+                    </div>
+                    <div class="flex justify-start gap-[12px] mt-4 mb-10">
+                        <div><img src="images/facebook.svg"></div>
+                        <div><img src="images/twitter.svg"></div>
+                        <div><img src="images/linkedin.svg"></div>
+                        <div><img src="images/instagram.svg"></div>
+                        <div><img src="images/youtube.svg"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-[110px,154px,150px,164px,125px] h-fit">
+                <!-- <div class="flex justify-between h-fit">      -->
+                    <div class="h-fit">           
+                        <ul>
+                            <li class="font-medium mb-[10px] font-inter">About</li>
+                            <li class="footer-text">About Us</li>
+                            <li class="footer-text mt-[3px]">Find store</li>
+                            <li class="footer-text mt-[3px]">Categories</li>
+                            <li class="footer-text mt-[3px]">Blogs</li>
+                        </ul>
+                    </div>
+                    <div class="h-fit">
+                        <ul>
+                            <li class="font-medium mb-[10px] font-inter">Partnership</li>
+                            <li class="footer-text">About Us</li>
+                            <li class="footer-text mt-[3px]" >Find store</li>
+                            <li class="footer-text mt-[3px]">Categories</li>
+                            <li class="footer-text mt-[3px]">Blogs</li>
+                        </ul> 
+                    </div>
+                    <div class="h-fit">
+                        <ul>
+                            <li class="font-medium mb-[10px] font-inter">Information</li>
+                            <li class="footer-text">Help Center</li>
+                            <li class="footer-text mt-[3px]">Money Refund</li>
+                            <li class="footer-text mt-[3px]">Shipping</li>
+                            <li class="footer-text mt-[3px]">Contact us</li>
+                        </ul> 
+                    </div>
+                    <div class="h-fit"> 
+                        <ul>
+                            <li class="font-medium mb-[10px] font-inter">For users</li>
+                            <li class="footer-text ">Login</li>
+                            <li class="footer-text mt-[3px]">Register</li>
+                            <li class="footer-text mt-[3px]">Settings</li>
+                            <li class="footer-text mt-[3px]">My Orders</li>
+                        </ul>  
+                    </div >  
+                    <div class="h-fit">
+                        <div class="flex flex-col">
+                            <div class="font-medium font-inter">Get app</div>
+                            <div class="bg-black flex justify-center w-[124px] h-[42px] mt-[15px] rounded-md">
+                               <img src="images/Apple.svg">                      
+                            </div>
+                            <div class="bg-black flex justify-center w-[124px] h-[42px] mt-[8px] rounded-md">
+                               <img src="images/Anroid.svg">              
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- last line -->
+    <div class="bg-[#EFF2F4]  hidden lg:block" >
+        <div class="flex justify-between px-32 h-[68px]">
+            <div>
+                <p class="font-inter text-[16px] tracking-[-0.2px] mt-[25px]">© 2023 Ecommerce. </p>
+            </div>
+            <div class="flex gap-2 justify-center mr-[9px]">
+                <img class="w-6" src="images/US@2x.svg">
+                <p class="mt-[23px]">English</p>
+                <img class="w-3 ml-[4px]"src="images/up_arrow.svg">
+            </div>
+        </div>
+    </div>
+
+    <!-- product container like -->
+    <div class="font-inter text-[#1C1C1C] font-semibold text-[18px] mt-[-76px] ml-[10px] md:hidden">You may also like</div>
+    <div class="scrollbar   pl-[20px] mb-[20px] mt-[20px] md:hidden">
+        <div id="likeproductContainer" class="flex gap-[8px]">          
+        </div>
+    </div>
+
+
+
+
+
+    
+    <script src="script.js">
+    </script>
+</body>
+</html>
