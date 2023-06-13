@@ -6,6 +6,27 @@ const productCard = document.querySelector('.products');
 const categoryList = document.querySelector('.category-list');
 // const productCard_mobile=document.querySelector('.productsmobile')
 
+// skeleton
+const allSkeleton = document.querySelectorAll('.skeleton')
+
+window.addEventListener('load', function() {
+  allSkeleton.forEach(item=> {
+    item.classList.remove('skeleton')
+  })
+})
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  likefetchData();
+  mobilefetchData();
+  fetchData();
+});
+
+
+
+
+
+
 function fetchData() {
   let uri = "https://crazy-sun-hat-cod.cyclic.app/products";
   fetch(uri) 
@@ -28,7 +49,7 @@ function fetchData() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", fetchData);
+// document.addEventListener("DOMContentLoaded", fetchData);
 
 // mobile header
 function mobilefetchData() {
@@ -42,7 +63,7 @@ function mobilefetchData() {
       console.error('Error fetching JSON data:', error);
     });
 }
-document.addEventListener("DOMContentLoaded", mobilefetchData);
+// document.addEventListener("DOMContentLoaded", mobilefetchData);
 
 // like product
 function likefetchData() {
@@ -57,7 +78,7 @@ function likefetchData() {
       console.error('Error fetching JSON data:', error);
     });
 }
-document.addEventListener("DOMContentLoaded", likefetchData);
+// document.addEventListener("DOMContentLoaded", likefetchData);
 
 
 
