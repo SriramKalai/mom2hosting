@@ -1,5 +1,7 @@
 let products; 
 let filterobject;
+let mobiledata;
+let likedata ;
 const productCard = document.querySelector('.products');
 const categoryList = document.querySelector('.category-list');
 // const productCard_mobile=document.querySelector('.productsmobile')
@@ -28,6 +30,33 @@ function fetchData() {
 document.addEventListener("DOMContentLoaded", fetchData);
 
 // mobile header
+function mobilefetchData() {
+  let uri = "https://crazy-sun-hat-cod.cyclic.app/mobile";
+  fetch(uri) 
+    .then(response => response.json())
+    .then(data => {
+      mobiledata = data; 
+    })
+    .catch(error => {
+      console.error('Error fetching JSON data:', error);
+    });
+}
+document.addEventListener("DOMContentLoaded", mobilefetchData);
+
+// like product
+function likefetchData() {
+  let uri = "https://crazy-sun-hat-cod.cyclic.app/like";
+  fetch(uri) 
+    .then(response => response.json())
+    .then(data => {
+      likedata = data; 
+      console.log(likedata);
+    })
+    .catch(error => {
+      console.error('Error fetching JSON data:', error);
+    });
+}
+document.addEventListener("DOMContentLoaded", likefetchData);
 
 
 
@@ -280,11 +309,11 @@ const renderAllCategories = (categories) => {
 // new content
 let selectedBrands = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('http://127.0.0.1/data/db.json')
+  fetch('https://crazy-sun-hat-cod.cyclic.app/products')
     .then(response => response.json())
     .then(data => {
       const brandSet = new Set();
-      data.products.forEach(product => {
+      data.forEach(product => {
         brandSet.add(product.Brand);
       });
 
@@ -421,11 +450,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let selectedcondition = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('http://127.0.0.1/data/db.json')
+    fetch('https://crazy-sun-hat-cod.cyclic.app/products')
       .then(response => response.json())
       .then(data => {
         const conditionSet = new Set();
-        data.products.forEach(product => {
+        data.forEach(product => {
           conditionSet.add(product.condition);
         });
 
@@ -598,11 +627,11 @@ for (var i = 0; i < btns.length; i++) {
   
   let selectedfeature = new Set();
   document.addEventListener("DOMContentLoaded", function() {
-    fetch('http://127.0.0.1/data/db.json')
+    fetch('https://crazy-sun-hat-cod.cyclic.app/products')
       .then(response => response.json())
       .then(data => {
         const FeatureSet = [];
-        data.products.forEach(product => {
+        data.forEach(product => {
           product.feature.forEach(feature=>{
               if(!FeatureSet.includes(feature)){
                 FeatureSet.push(feature);
@@ -1297,11 +1326,11 @@ var dropdown = document.getElementById("feaDropdown");
 
   let selectedmanu = new Set();
   document.addEventListener("DOMContentLoaded", function() {
-    fetch('http://127.0.0.1/data/db.json')
+    fetch('https://crazy-sun-hat-cod.cyclic.app/products')
       .then(response => response.json())
       .then(data => {
         const manuSet = new Set();
-        data.products.forEach(product => {
+        data.forEach(product => {
           manuSet.add(product.manufacturers);
         });
   
@@ -1586,9 +1615,10 @@ function ratingcheckAllCheckboxes() {
 const mobileButtonsContainer = document.getElementById("mobileButtons");
 
 function mobile(){
-  console.log(products["mobile"][0]["header"])
+  // console.log(products["mobile"][0]["header"])
 // Iterate through the header array and create buttons
-products["mobile"][0]["header"].forEach(item => {
+
+    mobiledata[0]['header'].forEach(item => {
     const button = document.createElement("button");
     button.textContent = item;
     button.classList.add("px-[16px]", "py-[6px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
@@ -1620,7 +1650,7 @@ function createProductCard(product) {
 // Populate product cards
 const productContainer = document.getElementById("likeproductContainer");
 function like(){
-  products["like"].forEach(product => {
+  likedata.forEach(product => {
     const card = createProductCard(product);
     productContainer.appendChild(card);
   });}
