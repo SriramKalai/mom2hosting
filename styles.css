@@ -1061,6 +1061,14 @@ video {
   height: 100%;
 }
 
+.h-\[100px\]{
+  height: 100px;
+}
+
+.h-\[110px\]{
+  height: 110px;
+}
+
 .max-h-\[3\.9rem\]{
   max-height: 3.9rem;
 }
@@ -1196,6 +1204,14 @@ video {
 
 .w-full{
   width: 100%;
+}
+
+.w-\[227px\]{
+  width: 227px;
+}
+
+.w-\[100px\]{
+  width: 100px;
 }
 
 .min-w-\[112px\]{
@@ -1364,6 +1380,10 @@ video {
   border-radius: 0px;
 }
 
+.rounded-\[25px\]{
+  border-radius: 25px;
+}
+
 .rounded-e-lg{
   border-start-end-radius: 0.5rem;
   border-end-end-radius: 0.5rem;
@@ -1497,6 +1517,11 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#dddddd\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 221 221 / var(--tw-bg-opacity));
 }
 
 .p-2{
@@ -1764,11 +1789,6 @@ video {
 .placeholder-gray-500::placeholder{
   --tw-placeholder-opacity: 1;
   color: rgb(107 114 128 / var(--tw-placeholder-opacity));
-}
-
-.drop-shadow-2xl{
-  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .drop-shadow-xl{
@@ -2296,6 +2316,15 @@ fireworks--border: $fireworks--width/2; */
   }
 }
 
+/* sekelton */
+
+.skeleton-bar {
+  height: 250px;
+  width: 100%;
+  background: #dddddd;
+  border-radius: 25px;
+}
+
 .hover\:bg-blue-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
@@ -2394,6 +2423,26 @@ fireworks--border: $fireworks--width/2; */
     height: auto;
   }
 
+  .md\:h-\[250px\]{
+    height: 250px;
+  }
+
+  .md\:h-\[50px\]{
+    height: 50px;
+  }
+
+  .md\:h-\[150px\]{
+    height: 150px;
+  }
+
+  .md\:h-\[200px\]{
+    height: 200px;
+  }
+
+  .md\:h-\[20px\]{
+    height: 20px;
+  }
+
   .md\:w-\[180px\]{
     width: 180px;
   }
@@ -2460,6 +2509,26 @@ fireworks--border: $fireworks--width/2; */
     display: none;
   }
 
+  .lg\:h-\[250px\]{
+    height: 250px;
+  }
+
+  .lg\:h-\[150px\]{
+    height: 150px;
+  }
+
+  .lg\:h-\[200px\]{
+    height: 200px;
+  }
+
+  .lg\:h-\[20px\]{
+    height: 20px;
+  }
+
+  .lg\:h-\[30px\]{
+    height: 30px;
+  }
+
   .lg\:w-230{
     width: 230px;
   }
@@ -2512,4 +2581,3 @@ fireworks--border: $fireworks--width/2; */
     font-size: 16px;
   }
 }
-

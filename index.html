@@ -15,27 +15,29 @@
 </head>
 <body class="bg[#DADADA]"> 
         <!-- mobile view -->
-        <div class="flex bg-white h-[56px] items-center lg:hidden skeleton">
-            <div class="flex mr-[20px] ml-[20px] bg-white w-full justify-between skeleton">
-                <div class="mt-[6px] ml-[-1px] skeleton"><img src="images/mobile_arrow.svg" class="w-[16px] h-[16px]" alt="leftarrow"></div>
-                <div class="font-inter font-semibold text-[18px] skeleton">Mobile accessory </div>
-                <div class="flex gap-[30px] mt-[4px] skeleton">
+        <div class="flex bg-white h-[56px] items-center lg:hidden">
+            <div class="flex mr-[20px] ml-[20px] bg-white w-full justify-between">
+                <div class="mt-[6px] ml-[-1px] "><img src="images/mobile_arrow.svg" class="w-[16px] h-[16px]" alt="leftarrow"></div>
+                <div class="font-inter font-semibold text-[18px] ">Mobile accessory </div>
+                <div class="flex gap-[30px] mt-[4px] ">
                     <div><img src="images/cart_mobile.svg" class="w-[20px] h-[20px] ml-[44px]" alt="cart image"></div>
                     <div><img src="images/profile_mobile.svg" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></div>
                 </div>    
             </div>
         </div>
-        <div class="flex justify-center pl-[15px] pr-[15px] h-[40px] lg:hidden skeleton">
+        <div class="flex justify-center pl-[15px] pr-[15px] h-[40px] lg:hidden ">
             <div class="flex w-full">
-                <input class="border-[2px] border-[#DEE2E7] rounded-md w-full px-4 py-2 bg-#F7FAFC skeleton" type="text" placeholder="Search">
+                <input class="border-[2px] border-[#DEE2E7] rounded-md w-full px-4 py-2 bg-#F7FAFC" type="text" placeholder="Search">
             </div>
         </div>
-        <div class="flex justify-start pl-[16px] mt-[16px] lg:hidden skeleton">
+        <div class="flex justify-start pl-[16px] mt-[16px] lg:hidden">
             <div class="scrollbar">
-                <div id="mobileButtons" class="flex space-x-1 skeleton"></div>
+                <div id="mobileButtons" class="flex space-x-1">
+                </div>         
+                
             </div>
         </div>
-        <div class="flex skeleton w-full border-t-[2px] border-[#DEE2E7] mt-[18px] h-[50px] border-b-[2px] px-[10px] justify-between items-center gap-[1px] lg:hidden shrink-0">
+        <div class="flex  w-full border-t-[2px] border-[#DEE2E7] mt-[18px] h-[50px] border-b-[2px] px-[10px] justify-between items-center gap-[1px] lg:hidden shrink-0">
             <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md ">
                 <div class="flex items-center  justify-center text-center gap-[10px]">
                 <p class="mr-[5px] text-inter text-[16px]">Sort: New</p>
@@ -218,7 +220,12 @@
                             <img class="catupbtn mt-[20px] w-[12px] h-[8px] cursor-pointer" onclick="cathidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>
                         <div class="category">      
-                            <ul class="category-list"></ul>
+                            <ul class="category-list">
+                                <div class="lg:h-[30px] w-[150px] bg-[#dddddd] rounded-[25px]"></div>
+                                <div class="lg:h-[30px] w-[150px] bg-[#dddddd] rounded-[25px] mt-[6px]"></div>
+                                <div class="lg:h-[30px] w-[150px] bg-[#dddddd] rounded-[25px] mt-[6px]"></div>
+                                <div class="lg:h-[30px] w-[150px] bg-[#dddddd] rounded-[25px] mt-[6px]"></div>
+                            </ul>
                         </div>
                     </div>
                     <hr class="mt-[24px] h-[1px] bg-[#E0E0E0]">
@@ -229,7 +236,8 @@
                             <img class="brandupbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="brandhidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>        
                             <div class="brands ml-[4px]">
-                                <ul id="brandList"></ul>
+                                <ul id="brandList">
+                                </ul>
                                 <p id="seeMoreBtn" class="text-textsee font-inter text-[16px] cursor-pointer  ml-[-1px]">See all</p>
                                 <p id="showLessBtn" style="display: none; " class="text-textsee font-inter text-[16px] cursor-pointer">Show Less</p>      
                             </div>              
@@ -403,8 +411,19 @@
     
                     <!-- product list -->
                     
-                    <div class="products mt-[-25px] skeleton">
-            
+                    <div class="products mt-[-25px]">
+                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        </div>
+                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        </div>
+                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        </div>
+                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        </div>
+                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        </div>
+                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        </div>
                     </div>    
                 </div>        
             </div>
@@ -539,9 +558,9 @@
     </div>
 
     <!-- product container like -->
-    <div class="font-inter text-[#1C1C1C] font-semibold text-[18px] mt-[-76px] ml-[10px] md:hidden skeleton">You may also like</div>
-    <div class="scrollbar   pl-[20px] mb-[20px] mt-[20px] md:hidden skeleton">
-        <div id="likeproductContainer" class="flex gap-[8px] skeleton">          
+    <div class="font-inter text-[#1C1C1C] font-semibold text-[18px] mt-[-76px] ml-[10px] md:hidden">You may also like</div>
+    <div class="scrollbar   pl-[20px] mb-[20px] mt-[20px] md:hidden">
+        <div id="likeproductContainer" class="flex gap-[8px]">          
         </div>
     </div>
 
