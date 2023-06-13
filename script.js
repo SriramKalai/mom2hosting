@@ -1761,3 +1761,22 @@ function blueheartbutton(x) {
     buttonblue.classList.toggle("inactive");
 
   };
+
+
+
+
+  // selecting flag
+  var iconSelect;
+
+  window.onload = function(){
+
+      iconSelect = new IconSelect("my-icon-select");
+
+      var icons = [];
+      icons.push({'iconFilePath':'images/flag/austallia.svg', 'iconValue':'1'});
+      icons.push({'iconFilePath':'images/flag/austallia.svg', 'iconValue':'2'});
+      icons.push({'iconFilePath':'images/flag/austallia.svg', 'iconValue':'3'});
+
+      iconSelect.refresh(icons);
+
+  };

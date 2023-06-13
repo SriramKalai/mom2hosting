@@ -178,14 +178,44 @@
                             </select> 
                         </div>
                        
-                        <div>     
-                            <span class="font-inter text-[#1C1C1C] text-[16px] font-medium cursor-pointer" >Ship to</span>                      
-                            <select class="cursor-pointer">
-                                <option value="all">&#127937</option>
-                                <option value="category1">&#127937</option>
-                                <option value="category2">&#127937</option>
-                                <option value="category3">&#127937</option>
-                            </select>                        
+                        <div class="flex">     
+                            <span class="font-inter text-[#1C1C1C] text-[16px] font-medium cursor-pointer " >Ship to</span>                      
+                            <!-- <select class="cursor-pointer">
+                                <div id="my-icon-select"></div>
+                                <option value="all" style="background-image: url('images/flag/austallia.svg'); background-size: contain; background-repeat: no-repeat; padding-left: 20px;"></option>
+                                <option value="category1" style="background-image: url('path-to-flag2.svg'); background-size: contain; background-repeat: no-repeat; padding-left: 20px;"></option>
+                                <option value="category2" style="background-image: url('path-to-flag3.svg'); background-size: contain; background-repeat: no-repeat; padding-left: 20px;"></option>
+                                <option value="category3" style="background-image: url('path-to-flag4.svg'); background-size: contain; background-repeat: no-repeat; padding-left: 20px;"></option>
+                              </select>                        -->
+                              <div class="select-sim" id="select-color">
+                                <div class="options">
+                                  <div class="option">
+                                    <input type="radio" name="color" value="" id="color-" checked />
+                                    <label for="color-">
+                                      <img src="images/flag/austallia.svg" alt="" />
+                                    </label>
+                                  </div>
+                                  <div class="option">
+                                    <input type="radio" name="color" value="red" id="color-red" />
+                                    <label for="color-red">
+                                      <img src="images/flag/england.svg" alt="" />
+                                    </label>
+                                  </div>
+                                  <div class="option">
+                                    <input type="radio" name="color" value="green" id="color-green" />
+                                    <label for="color-green">
+                                      <img src="images/flag/india.svg" alt="" /> 
+                                    </label>
+                                  </div>
+                                  <div class="option">
+                                    <input type="radio" name="color" value="blue" id="color-blue" />
+                                    <label for="color-blue">
+                                      <img src="images/flag/japan.svg" alt="" /> 
+                                    </label>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
