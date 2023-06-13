@@ -573,7 +573,7 @@ for (var i = 0; i < btns.length; i++) {
       ${filterobject.products.map(product => `
       <div class="card_outer">    
       <div class="image_outer ">
-        <img src="${product.image_url}" class="w-[84px] md:w-[210px] max-w-none"  alt="${product.product_name}"/>
+        <img src="${product.image_url}" class="w-[92px] h-[82px] md:h-[auto] md:w-[210px] max-w-none"  alt="${product.product_name}"/>
       </div>
       <div class="detail">
           <p class="text-[16px] text-menutext font-inter md:font-medium">${product.product_name}</p>
