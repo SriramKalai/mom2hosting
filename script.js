@@ -5,7 +5,7 @@ const categoryList = document.querySelector('.category-list');
 // const productCard_mobile=document.querySelector('.productsmobile')
 
 function fetchData() {
-  let uri = "/db.json";
+  let uri = "https://crazy-sun-hat-cod.cyclic.app/products";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", fetchData);
 
 function totalitem(){
   const total=document.querySelector(".totalitems")
-  const productlen=products.products.length;
+  const productlen=products.length;
   // console.log(productlen)
   total.innerHTML=`${productlen}`;
 }
@@ -69,7 +69,7 @@ function productfilter(filterObj,perPage, pageNumber) {
   const currentPage = pageNumber || 1;
 
 
-  for (const product of products.products) {
+  for (const product of products) {
     // console.log(product)
     const brandMatch = filterObj.brand.length === 0 || filterObj.brand.includes(product.Brand);
     const manumatch=filterObj.manufacturers.length===0 || filterObj.manufacturers.includes(product.manufacturers)
@@ -228,7 +228,7 @@ gridproduct(filterobject);
 // categories
 const extractCategories = (products) => {
   const categories = [];
-  products.products.forEach(product => {
+  products.forEach(product => {
     product.category.forEach(category => {
       if (!categories.includes(category)) {
         categories.push(category);
@@ -280,7 +280,7 @@ const renderAllCategories = (categories) => {
 // new content
 let selectedBrands = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('/db.json')
+  fetch('http://127.0.0.1/data/db.json')
     .then(response => response.json())
     .then(data => {
       const brandSet = new Set();
@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let selectedcondition = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/db.json')
+    fetch('http://127.0.0.1/data/db.json')
       .then(response => response.json())
       .then(data => {
         const conditionSet = new Set();
@@ -598,7 +598,7 @@ for (var i = 0; i < btns.length; i++) {
   
   let selectedfeature = new Set();
   document.addEventListener("DOMContentLoaded", function() {
-    fetch('/db.json')
+    fetch('http://127.0.0.1/data/db.json')
       .then(response => response.json())
       .then(data => {
         const FeatureSet = [];
