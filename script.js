@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function() {
           checkbox.type = 'checkbox';
           checkbox.value = brand;
           checkbox.ariaLabel="Search";
-          checkbox.className="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer";
+          checkbox.className="w-[20px] h-[20px] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer";
 
           checkbox.addEventListener('change', function() {
             if (this.checked) {
@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", function() {
             radio.className = 'radio-circle';
             radio.name = 'condition';
             radio.value = condition;
-            radio.className="w-[20px] h-[20] mr-[12px]  mb-[16px] cursor-pointer";   
+            radio.className="w-[20px] h-[20px] mr-[12px]  mb-[16px] cursor-pointer";   
 
             if (this.checked) {
               selectedcondition.add(this.value);
@@ -661,7 +661,7 @@ for (var i = 0; i < btns.length; i++) {
             checkbox.type = 'checkbox';
             checkbox.ariaLabel="Search";
             checkbox.value = brand;
-            checkbox.className="w-[20px] h-[20] mr-[13px] ml-[4px] mb-[16px] rounded-[5px] cursor-pointer";
+            checkbox.className="w-[20px] h-[20px] mr-[13px] ml-[4px] mb-[16px] rounded-[5px] cursor-pointer";
       
             checkbox.addEventListener('change', function() {
               if (this.checked) {
@@ -1356,7 +1356,7 @@ var dropdown = document.getElementById("feaDropdown");
             checkbox.type = 'checkbox';
             checkbox.value = brand;
             checkbox.ariaLabel="Search";
-            checkbox.className="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer";
+            checkbox.className="w-[20px] h-[20px] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer";
             checkbox.addEventListener('change', function() {
               if (this.checked) {
                 selectedmanu.add(this.value);
