@@ -1663,6 +1663,7 @@ const mobileButtonsContainer = document.getElementById("mobileButtons");
 function mobile(){
   // console.log(products["mobile"][0]["header"])
 // Iterate through the header array and create buttons
+const skeletonLoader = document.querySelector('.skeleton-loader-title');
 
     mobiledata[0]['header'].forEach(item => {
     const button = document.createElement("button");
@@ -1670,6 +1671,7 @@ function mobile(){
     button.classList.add("px-[16px]", "py-[6px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
     mobileButtonsContainer.appendChild(button);
 });
+skeletonLoader.classList.add('hidden');
 }
 
 
