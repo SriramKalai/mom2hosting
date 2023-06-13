@@ -5,7 +5,7 @@ const categoryList = document.querySelector('.category-list');
 // const productCard_mobile=document.querySelector('.productsmobile')
 
 function fetchData() {
-  let uri = "http://127.0.0.1/data/db.json";
+  let uri = "/db.json";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
@@ -280,7 +280,7 @@ const renderAllCategories = (categories) => {
 // new content
 let selectedBrands = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('http://127.0.0.1/data/db.json')
+  fetch('/db.json')
     .then(response => response.json())
     .then(data => {
       const brandSet = new Set();
@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let selectedcondition = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('http://127.0.0.1/data/db.json')
+    fetch('/db.json')
       .then(response => response.json())
       .then(data => {
         const conditionSet = new Set();
@@ -598,7 +598,7 @@ for (var i = 0; i < btns.length; i++) {
   
   let selectedfeature = new Set();
   document.addEventListener("DOMContentLoaded", function() {
-    fetch('http://127.0.0.1/data/db.json')
+    fetch('/db.json')
       .then(response => response.json())
       .then(data => {
         const FeatureSet = [];
