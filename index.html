@@ -253,7 +253,7 @@
                             <img class="pricedownbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer hidden " onclick="priceshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
                             <img class="priceupbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer" onclick="pricehidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>
-                        <div class="pricesilde">
+                        <div class="pricesilde" aria-label="Search">
                             <!-- <ul id="df">pricetag</ul> -->
                             <div class="wrapper w-[232px] ml-[4px] mt-[-33px]">                     
                                 <div class="slider">
@@ -268,11 +268,11 @@
                                     
                                         <div class="field">
                                             <div class="min mt-[-5px] ml[-84px] font-inter">Min</div>
-                                            <input type="number" class="input-min p-[10px]" value="0">
+                                            <input type="number" class="input-min p-[10px]" value="0" aria-label="Search">
                                         </div>          
                                         <div class="field" id="maxfield">
                                             <div class="ml-[-1px] mt-[-5px]">Max</div>
-                                            <input type="number" class="input-max p-[10px]" value="1000">
+                                            <input type="number" class="input-max p-[10px]" value="1000" aria-label="Search">
                                         </div>
                                     </div>
                                 </div>
@@ -299,7 +299,7 @@
                         </div> 
                         <div class="star ml-[5px] mt-[11px]">
                             <div class="starrating flex mt-2">
-                                <input type="checkbox" value="five" onclick="starrating(5)" id="5" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <input type="checkbox" value="five" aria-label="Search" onclick="starrating(5)" id="5" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
                                 <!-- <div class="starbox"></div> -->
                                 <div onclick="starrating(5);buttonchange(5);">
                                     <span class="fa fa-star checked"></span>
@@ -310,7 +310,7 @@
                                 </div>
                             </div> 
                             <div class="flex">
-                                <input type="checkbox" value="four" onclick="starrating(4)" id="4" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <input type="checkbox" value="four" aria-label="Search" onclick="starrating(4)" id="4" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
                                 <div onclick="starrating(4);buttonchange(4);">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -320,7 +320,7 @@
                                 </div>
                             </div>
                             <div class="flex">
-                                <input type="checkbox" value="three" onclick="starrating(3)" id="3" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <input type="checkbox" value="three" aria-label="Search" onclick="starrating(3)" id="3" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
                                 <div onclick="starrating(3);buttonchange(3);">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -330,7 +330,7 @@
                                 </div>
                             </div>
                             <div class="flex">
-                                <input type="checkbox" value="two" onclick="starrating(2)" id="2" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
+                                <input type="checkbox" value="two" aria-label="Search" onclick="starrating(2)" id="2" class="w-[20px] h-[20] mr-[13px]  mb-[16px] rounded-[6px] cursor-pointer">
                                 <div  onclick="starrating(2);buttonchange(2);">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -371,7 +371,7 @@
                         <div class="flex">
                             <div class="flex items-start justify-start mt-[2px]">
                               
-                                    <input class="w-[20px] h-[20px]  mt-[5px]  rounded-[6px] cursor-pointer font-inter text-[#1C1C1C]" type="checkbox" id="verificationCheckbox" onclick=" verifyContent()"> <span class="ml-[14px] mt-[4px]">Verified only</span>
+                                    <input class="w-[20px] h-[20px]  mt-[5px]   rounded-[6px] cursor-pointer font-inter text-[#1C1C1C]" aria-label="Search" type="checkbox" id="verificationCheckbox" onclick=" verifyContent()"> <span class="ml-[14px] mt-[4px]">Verified only</span>
                              
                             </div>
                         
@@ -385,8 +385,8 @@
                             </div>
                             <div>
                                 <div id="btnContainer" class="ml-[7px] flex mr-[7px]">
-                                    <button class="btn cursor-pointer bg-white w-[40px] h-[38px] border-[1px] rounded-l" onclick="gridView()"><i class="fa fa-th-large"></i></button>
-                                    <button class="btn cursor-pointer bg-white active w-[40px] h-[38px] border-[1px] rounded-r" onclick="listView(filterobject)" id="listview"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                        
+                                    <button class="btn cursor-pointer bg-white w-[40px] h-[38px] border-[1px] rounded-l" onclick="gridView()" aria-label="grid view"><i class="fa fa-th-large"></i></button>
+                                    <button class="btn cursor-pointer bg-white active w-[40px] h-[38px] border-[1px] rounded-r" onclick="listView(filterobject)" id="listview" aria-label="list view"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                        
                                 </div>
                             </div>
                         </div>    
@@ -532,7 +532,7 @@
             <div class="flex gap-2 justify-center mr-[9px]">
                 <img class="w-6" src="images/US@2x.svg" alt="flag">
                 <p class="mt-[23px]">English</p>
-                <img class="w-3 ml-[4px]"src="images/up_arrow.svg">
+                <img class="w-3 ml-[4px]"src="images/up_arrow.svg" alt="up arrow icon">
             </div>
         </div>
     </div>
