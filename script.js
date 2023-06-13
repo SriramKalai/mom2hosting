@@ -250,8 +250,16 @@ function gridproduct(filterobject){
                   <p class="text-[16px] text-[#606060] font-inter">${product.product_name}</p>
                 </div>
               </div>
-              <div class="bg-[#FFFFFF]  p-[10px] h-fit drop-shadow-2xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheart()">
-                <img class="blueheartnotactive w-5 h-5 max-w-none"src="images/heart_blue.svg" / alt="wish list">
+              <div class="bg-[#FFFFFF]  hidden lg:flex">
+                  <a class="button one inactive mobile button--secondary  h-fit drop-shadow-xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheartbutton(${product.product_id})" id="${product.product_id}button">
+                      <div class="btn__effect">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z" fill="#0D6EFD"/>
+                          </svg>
+  
+                          <svg class="heart-full icon-svg icon-svg--size-4 icon-svg--color-blue" viewBox="0 0 19.2 18.5" aria-hidden="true" focusable="false"><path d="M9.66 18.48a4.23 4.23 0 0 1-2.89-1.22C.29 10.44-.12 7.79.02 5.67.21 2.87 1.95.03 5.42.01c1.61-.07 3.16.57 4.25 1.76A5.07 5.07 0 0 1 13.6 0c2.88 0 5.43 2.66 5.59 5.74.2 4.37-6.09 10.79-6.8 11.5-.71.77-1.7 1.21-2.74 1.23z"></path></svg>
+                      </div>
+                  </a>
               </div> 
 
         </div>
@@ -625,8 +633,16 @@ for (var i = 0; i < btns.length; i++) {
               <span class="text-detail font-inter text-[16px] font-semibold">View details</span>
           </div>
       </div>
-      <div class="bg-white  p-[10px] h-fit drop-shadow-xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheart()">
-          <img class="blueheartnotactive w-5 h-5 max-w-none"src="images/heart_blue.svg" alt="wishlist icon" />
+      <div class="bg-white hidden lg:flex">
+      <a class="button one inactive mobile button--secondary  h-fit drop-shadow-xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheartbutton(${product.product_id})" id="${product.product_id}button">
+          <div class="btn__effect">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z" fill="#0D6EFD"/>
+              </svg>
+  
+              <svg class="heart-full icon-svg icon-svg--size-4 icon-svg--color-blue" viewBox="0 0 19.2 18.5" aria-hidden="true" focusable="false"><path d="M9.66 18.48a4.23 4.23 0 0 1-2.89-1.22C.29 10.44-.12 7.79.02 5.67.21 2.87 1.95.03 5.42.01c1.61-.07 3.16.57 4.25 1.76A5.07 5.07 0 0 1 13.6 0c2.88 0 5.43 2.66 5.59 5.74.2 4.37-6.09 10.79-6.8 11.5-.71.77-1.7 1.21-2.74 1.23z"></path></svg>
+          </div>
+      </a>
       </div>               
     </div>
       `).join('')}
@@ -1680,3 +1696,15 @@ function like(){
     const card = createProductCard(product);
     productContainer.appendChild(card);
   });}
+
+
+
+  // blue heart button
+function blueheartbutton(x) {
+    const buttonblue=document.getElementById(`${x}button`)
+    if ( buttonblue.classList.contains( "active" ) ) {
+      buttonblue.classList.add("deactivate")
+    }
+    buttonblue.classList.toggle("active");
+    buttonblue.classList.toggle("inactive");
+  };
