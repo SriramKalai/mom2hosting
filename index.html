@@ -13,11 +13,11 @@
         <!-- mobile view -->
         <div class="flex bg-white h-[56px] items-center lg:hidden">
             <div class="flex mr-[20px] ml-[20px] bg-white w-full justify-between">
-                <div class="mt-[6px] ml-[-1px]"><img src="images/mobile_arrow.svg" class="w-[16px] h-[16px]"></div>
+                <div class="mt-[6px] ml-[-1px]"><img src="images/mobile_arrow.svg" class="w-[16px] h-[16px]" alt="leftarrow"></div>
                 <div class="font-inter font-semibold text-[18px]">Mobile accessory </div>
                 <div class="flex gap-[30px] mt-[4px]">
-                    <div><img src="images/cart_mobile.svg" class="w-[20px] h-[20px] ml-[44px]"></div>
-                    <div><img src="images/profile_mobile.svg" class="w-[16px] h-[16px] mt-[1px]"></div>
+                    <div><img src="images/cart_mobile.svg" class="w-[20px] h-[20px] ml-[44px]" alt="cart image"></div>
+                    <div><img src="images/profile_mobile.svg" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></div>
                 </div>    
             </div>
         </div>
@@ -35,13 +35,13 @@
             <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md ">
                 <div class="flex items-center  justify-center text-center gap-[10px]">
                 <p class="mr-[5px] text-inter text-[16px]">Sort: New</p>
-                <img src="images/sort.svg" class="w-[13px] h-[9px] ">
+                <img src="images/sort.svg" class="w-[13px] h-[9px]" class="sort icon">
                 </div>
             </button>  
             <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md shrink-0">
                 <div class="flex items-center  justify-center text-center gap-[10px]">
                 <p class="mr-[5px] text-inter text-[16px]">Filter (3)</p>
-                <img src="images/filter.svg" class="w-[20px] h-[20px] ">
+                <img src="images/filter.svg" class="w-[20px] h-[20px]" alt="filter">
                 </div>
             </button>       
             <div class="flex">
@@ -97,7 +97,7 @@
         <div class="flex justify-between items-center lg:max-w-[1180px] w-full pt-[22px] pb-[22px]">
             <div class="flex w-full items-center">
                 <div class="w-[120px] lg:w-[150px]">
-                    <img src="images/brand_logo.png">
+                    <img src="images/brand_logo.png" alt="brand logo">
                 </div>
                 <div class="flex border border-[#0D6EFD] border-solid rounded-lg flex-1 md:ml-[23px] lg:ml-[46px] max-w[670px] lg:mt-[-2px]">
                     <input type="text" placeholder="Search" class="border border-[#0D6EFD] border-solid p-[10px] rounded-s-lg placeholder-gray-500 font-normal flex-1">
@@ -109,19 +109,19 @@
             </div>
             <div class="flex gap-[24px] md:ml-[44px] lg:ml-[87px] w-[230px] shrink-0 cursor-pointer">
                 <div class="flex flex-col gap-2 items-center text-xs text-gray-500">
-                    <img class="w-[20px]" src="images/profile.svg">
+                    <img class="w-[20px]" src="images/profile.svg" alt="profile image">
                     <div>Profile</div>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
-                    <img src="images/message.svg">
+                    <img src="images/message.svg" alt="message image">
                     <div>Message</div>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
-                    <img src="images/wishlist.svg">
+                    <img src="images/wishlist.svg" alt="order image">
                     <div class="mt-[2px]">Orders</div>
                 </div>
                 <div class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
-                    <img src="images/cart.svg">
+                    <img src="images/cart.svg" alt="cart icon">
                     <div>My cart</div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
                 <div class="flex py-4 justify-between">
                     <div class="flex justify-center gap-10 w-fit">
                         <ul class="flex">
-                            <li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[16px]"src="images/menu.svg"></button></li>
+                            <li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[16px]"src="images/menu.svg" alt="menu icon"></button></li>
                             <li class="text-menutext font-inter font-medium ml-[7px] mt-[-1px] cursor-pointer">All category</li>
                             <li class="text-menutext font-inter font-medium  ml-[27px] mt-[-1px] cursor-pointer">Hot offers</li>
                             <li class="text-menutext font-inter font-medium  ml-[29px] mt-[-1px] cursor-pointer">Gift boxes</li>
@@ -210,8 +210,8 @@
                         <hr class="mt-[20px] h-[1px] bg-[#E0E0E0]">
                         <div class="flex justify-between">
                             <div class="font-semibold inline-block mt-[11px] font-inter text-[16px] mb-[20px] text-[#1C1C1C]">Category</div>
-                            <img class="catdownbtn mt-[18px]  w-[12px] h-[8px] cursor-pointer hidden" onclick="catshowcontent()"  src="images/down_arrow.svg">
-                            <img class="catupbtn mt-[20px] w-[12px] h-[8px] cursor-pointer" onclick="cathidecontent()" src="images/up_arrow.svg">
+                            <img class="catdownbtn mt-[18px]  w-[12px] h-[8px] cursor-pointer hidden" onclick="catshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="catupbtn mt-[20px] w-[12px] h-[8px] cursor-pointer" onclick="cathidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>
                         <div class="category">      
                             <ul class="category-list"></ul>
@@ -221,8 +221,8 @@
                     <div class="flex flex-col">
                         <div class="flex justify-between ">
                             <div class="font-semibold inline mt-[10px] font-inter text-[16px] mb-[22px] ml-[2px]">Brands</div>
-                            <img class="branddownbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer  hidden" onclick="brandshowcontent()"  src="images/down_arrow.svg">
-                            <img class="brandupbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="brandhidecontent()" src="images/up_arrow.svg">
+                            <img class="branddownbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer  hidden" onclick="brandshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="brandupbtn mt-[19px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="brandhidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>        
                             <div class="brands ml-[4px]">
                                 <ul id="brandList"></ul>
@@ -234,8 +234,8 @@
                     <div class="flex flex-col">
                         <div class="flex justify-between">
                             <div class="font-semibold inline-block mt-[10px] ml-[4px] font-inter text-[16px] mb-[21px]">Features</div>
-                            <img class="featuredownbtn mt-[18px] ml-12 w-[12px] h-[8px] cursor-pointer  hidden" onclick="featureshowcontent()"  src="images/down_arrow.svg">
-                            <img class="featureupbtn mt-[18px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="featurehidecontent()" src="images/up_arrow.svg">
+                            <img class="featuredownbtn mt-[18px] ml-12 w-[12px] h-[8px] cursor-pointer  hidden" onclick="featureshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="featureupbtn mt-[18px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="featurehidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>
                         <div class="feature">
                             <ul id="FeatureList"></ul>
@@ -247,8 +247,8 @@
                     <div class="flex flex-col ">
                         <div class="flex justify-between">
                             <div class="font-semibold inline-block  mt-[11px] ml-[4px] font-inter text-[16px] mb-[21px]">Price range</div>
-                            <img class="pricedownbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer hidden " onclick="priceshowcontent()"  src="images/down_arrow.svg">
-                            <img class="priceupbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer" onclick="pricehidecontent()" src="images/up_arrow.svg">
+                            <img class="pricedownbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer hidden " onclick="priceshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="priceupbtn mt-[19px] ml-[37px] w-[12px] h-[8px] cursor-pointer" onclick="pricehidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>
                         <div class="pricesilde">
                             <!-- <ul id="df">pricetag</ul> -->
@@ -281,8 +281,8 @@
                     <div class="flex flex-col">
                         <div class="flex justify-between">
                             <div class="font-semibold inline-block font-inter text-[16px] mb-[19px] mt-[13px] ml-[2px]">Condition</div>
-                            <img class="downbtn mt-[21px] ml-12 w-[12px] h-[8px] cursor-pointer hidden " onclick="showcontent()"  src="images/down_arrow.svg">
-                            <img class="upbtn mt-[21px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="hidecontent()" src="images/up_arrow.svg">
+                            <img class="downbtn mt-[21px] ml-12 w-[12px] h-[8px] cursor-pointer hidden " onclick="showcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="upbtn mt-[21px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="hidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>
                         <ul id="conditionList" class="ml-[7px]"></ul>
                     </div>
@@ -291,8 +291,8 @@
                     <div class="flex flex-col mt-4">
                         <div class="flex justify-between">
                             <div class="font-bold inline-block font-inter text-[16px] mt-[-5px] ml-[4px]">Ratings</div>
-                            <img class="ratingdownbtn mt-[3px] ml-12w-[12px] h-[8px] cursor-pointer hidden" onclick="ratingshowcontent()"  src="images/down_arrow.svg">
-                            <img class="ratingupbtn mt-[3px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="ratinghidecontent()" src="images/up_arrow.svg">
+                            <img class="ratingdownbtn mt-[3px] ml-12w-[12px] h-[8px] cursor-pointer hidden" onclick="ratingshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="ratingupbtn mt-[3px] ml-12 w-[12px] h-[8px] cursor-pointer" onclick="ratinghidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div> 
                         <div class="star ml-[5px] mt-[11px]">
                             <div class="starrating flex mt-2">
@@ -343,8 +343,8 @@
                     <div class="flex flex-col mt-4">
                         <div class="flex justify-between ">
                             <div class="font-bold inline-block font-inter text-[16px] mb-[21px]">Manufacture</div>
-                            <img class="mandownbtn mt-[4px] ml-12w-[12px] h-[8px] cursor-pointer " onclick="manshowcontent()"  src="images/down_arrow.svg">
-                            <img class="manupbtn mt-[4px] ml-12 w-[12px] h-[8px] cursor-pointer hidden" onclick="manhidecontent()" src="images/up_arrow.svg">
+                            <img class="mandownbtn mt-[4px] ml-12w-[12px] h-[8px] cursor-pointer " onclick="manshowcontent()"  src="images/down_arrow.svg" alt="content hide arrow">
+                            <img class="manupbtn mt-[4px] ml-12 w-[12px] h-[8px] cursor-pointer hidden" onclick="manhidecontent()" src="images/up_arrow.svg" alt="content hide arrow">
                         </div>        
                             <div class="manu hidden">
                                 <ul id="manuList"></ul>
@@ -418,13 +418,13 @@
                 <option value="twenty" >Show 20</option>
             </select>
             <button class="bg-white w-44px h-10 ml-[9px]  flex justify-center items-center border-2 border-[#DEE2E7] rounded-md" id="leftpagebutton">
-                <img src="images/left_arrow.svg" class="notactiveleft w-[8px] h-[16px]">
-                <img class="activeleft hidden w-[14px] h-[16px]" src="images/left_active.svg">                          
+                <img src="images/left_arrow.svg" class="notactiveleft w-[8px] h-[16px]" alt="arrow icon">
+                <img class="activeleft hidden w-[14px] h-[16px]" src="images/left_active.svg" alt="arrow icon">                          
             </button>
             <div id="pageNumbers" class="mt-2 flex"></div>
             <button class="bg-white w-44px h-10 flex justify-center items-center border-2 border-[#DEE2E7] rounded-md ml-[-2px]" id="rightpagebuttton">
-                <img class="activeright w-[8px] h-[16px]" src="images/right_arrow.svg">
-               <img class="notactiverigth hidden w-[14px] h-[16px]" src="images/right_notactive.svg">       
+                <img class="activeright w-[8px] h-[16px]" src="images/right_arrow.svg" alt="arrow icon">
+               <img class="notactiverigth hidden w-[14px] h-[16px]" src="images/right_notactive.svg" alt="arrow icon">       
             </button>
         </div>
         </div>
@@ -451,18 +451,18 @@
         <div class="bg-white  h-[256px]">            
             <div class="flex mt-10 gap-[43px]">
                 <div class="flex flex-col mt-[4px]">
-                    <img src="images/brand_logo.png" class="max-w-[150px]">
+                    <img src="images/brand_logo.png" class="max-w-[150px]" alt="brand logo icon">
                     <div class="mt-4 font-inter text-[16px] tracking-[-0.2px] h-10px">
                         <div class="flex">
                             <p class="overflow-hidden max-h-[3.9rem] leading-[1.3rem] tracking-[-0.2px] w-[278px]">Best information about the company gies here but now lorem ipsum is</p>  
                         </div>                     
                     </div>
                     <div class="flex justify-start gap-[12px] mt-4 mb-10">
-                        <div><img src="images/facebook.svg"></div>
-                        <div><img src="images/twitter.svg"></div>
-                        <div><img src="images/linkedin.svg"></div>
-                        <div><img src="images/instagram.svg"></div>
-                        <div><img src="images/youtube.svg"></div>
+                        <div><img src="images/facebook.svg" alt="social media icon"></div>
+                        <div><img src="images/twitter.svg" alt="social media icon"></div>
+                        <div><img src="images/linkedin.svg" alt="social media icon"></div>
+                        <div><img src="images/instagram.svg" alt="social media icon"></div>
+                        <div><img src="images/youtube.svg" alt="social media icon"></div>
                     </div>
                 </div>
                 <div class="grid grid-cols-[110px,154px,150px,164px,125px] h-fit">
@@ -507,10 +507,10 @@
                         <div class="flex flex-col">
                             <div class="font-medium font-inter">Get app</div>
                             <div class="bg-black flex justify-center w-[124px] h-[42px] mt-[15px] rounded-md">
-                               <img src="images/Apple.svg">                      
+                               <img src="images/Apple.svg" alt="apple store icon">                      
                             </div>
                             <div class="bg-black flex justify-center w-[124px] h-[42px] mt-[8px] rounded-md">
-                               <img src="images/Anroid.svg">              
+                               <img src="images/Anroid.svg" alt="google play store icon">              
                             </div>
                         </div>
                     </div> 
@@ -527,7 +527,7 @@
                 <p class="font-inter text-[16px] tracking-[-0.2px] mt-[25px]">© 2023 Ecommerce. </p>
             </div>
             <div class="flex gap-2 justify-center mr-[9px]">
-                <img class="w-6" src="images/US@2x.svg">
+                <img class="w-6" src="images/US@2x.svg" alt="flag">
                 <p class="mt-[23px]">English</p>
                 <img class="w-3 ml-[4px]"src="images/up_arrow.svg">
             </div>

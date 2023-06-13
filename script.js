@@ -17,6 +17,7 @@ function fetchData() {
       totalitem();
       console.log(products)
       console.log(products["like"])
+  
       // console.log(products.products)
       mobile();
       like();
@@ -204,7 +205,7 @@ function gridproduct(filterobject){
     <div class="flex m-w-295 w-full  m-h-405 h-full bg-white flex-col border-[1px] rounded-md border-[#DEE2E7]">
       <div class="flex justify-center lg:block">
         <div class="flex w-[130px] h-[130px]  md:w-[180px] lg:w-230 md:h-230 justify-center lg:pl-[50px] lg:pr-0 lg:pt-[2rem] lg:pb-[0px]">
-          <img src="${product.image_url}">
+          <img src="${product.image_url}" alt="${product.product_name}">
         </div>
       </div>
       <hr class="md:mt-[35px] md:mb-[31px]">
@@ -229,7 +230,7 @@ function gridproduct(filterobject){
                 </div>
               </div>
               <div class="bg-[#FFFFFF]  p-[10px] h-fit drop-shadow-2xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheart()">
-                <img class="blueheartnotactive w-5 h-5 max-w-none"src="images/heart_blue.svg" />
+                <img class="blueheartnotactive w-5 h-5 max-w-none"src="images/heart_blue.svg" / alt="wish list">
               </div> 
 
         </div>
@@ -570,7 +571,7 @@ for (var i = 0; i < btns.length; i++) {
       ${filterobject.products.map(product => `
       <div class="card_outer">    
       <div class="image_outer ">
-        <img src="${product.image_url}" class="w-[84px] md:w-[210px] max-w-none" />
+        <img src="${product.image_url}" class="w-[84px] md:w-[210px] max-w-none"  alt="${product.product_name}"/>
       </div>
       <div class="detail">
           <p class="text-[16px] text-menutext font-inter md:font-medium">${product.product_name}</p>
@@ -588,9 +589,9 @@ for (var i = 0; i < btns.length; i++) {
                     <span class="fa fa-star emptystar" id="five${product.product_id}"></span>
                 </div>
                 <p class="text-base text-rating-color ml-[8px] md:ml-4">${product.rating}</p>
-                <img class="md:ml-3 md:mr-2.5 ml-[8px] mr-[8px]" src="Images/dot.svg" />
+                <img class="md:ml-3 md:mr-2.5 ml-[8px] mr-[8px]" src="Images/dot.svg" alt="dot"/>
                 <p class="font-inter text-[#8B96A5] text-[13px] lg:text-[16px] items-center">${product.total_order}<span class="md:ml-1.5">orders</span></p>
-                <img class="mr-2.5 ml-2.5 hidden md:block"src="Images/dot.svg" />
+                <img class="mr-2.5 ml-2.5 hidden md:block"src="Images/dot.svg" alt="dot" />
               </div>
                 <p class="text-shipping font-inter text-[13px] md:text-[16px]">Free Shipping</p>
           </div>
@@ -602,7 +603,7 @@ for (var i = 0; i < btns.length; i++) {
           </div>
       </div>
       <div class="bg-white  p-[10px] h-fit drop-shadow-xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheart()">
-          <img class="blueheartnotactive w-5 h-5 max-w-none"src="images/heart_blue.svg" />
+          <img class="blueheartnotactive w-5 h-5 max-w-none"src="images/heart_blue.svg" alt="wishlist icon" />
       </div>               
     </div>
       `).join('')}
