@@ -423,7 +423,7 @@
             
     
             <!-- products container -->
-                <div class="productcontainer lg:ml-8 w-full md:block">
+                <div class="productcontainer lg:ml-8 w-full">
                     <!-- product header -->
                     <div class="hidden lg:flex justify-between max-w-[920px] w-full h-16 bg-white items-center mt-[18px] border-[1px] rounded-md border-[#DADADA]">
                         <div class="ml-[24px]">
@@ -453,11 +453,13 @@
                             </div>
                         </div>    
                     </div>
-                    <div class="flex">
-                        <div id="content" class="flex flex-wrap "></div>
-                        <div class="hidden lg:block"><p id="clearButton" class="ml-2 mt-[26px] text-blue-500 cursor-pointer font-bold hidden font-inter">Clear all filter</p></div>
+                    <div class="scrollbar lg:none">
+                        <div class="flex ml-[20px] lg:ml-[0px]">
+                            <div id="content" class="flex flex-wrap "></div>
+                            <div class="hidden lg:block"><p id="clearButton" class="ml-2 mt-[26px] text-blue-500 cursor-pointer font-bold hidden font-inter">Clear all filter</p></div>
+                        </div>
                     </div>
-                
+                    
                     <br>
     
     

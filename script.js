@@ -1659,7 +1659,7 @@ function removeItem(category, item) {
     if (category=="rating"){
       buttonchange(`${item}`);
       }
- 
+  filtercountcheck()
   renderItems();
 }
 
@@ -1828,8 +1828,15 @@ function showleftside(){
     leftside.classList.add("hidden")
     producthide.classList.remove("hidden")
     likecontainer.classList.remove("hidden")
+    filtercountcheck();
+   }
+}
 
 
+
+// fillter count
+function filtercountcheck(){
+  filtercount=0;
     for (const property in arr) {
       const length = arr[property].length;
       filtercount+=length;
@@ -1838,10 +1845,5 @@ function showleftside(){
     console.log(filtercount)
     const filtershow=document.querySelector(".filtercount")
     filtershow.innerHTML=`Filter(${filtercount})`
-   }
 }
-
-
-
-
 

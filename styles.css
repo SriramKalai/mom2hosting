@@ -2649,6 +2649,10 @@ fireworks--border: $fireworks--width/2; */
     margin-top: 0px;
   }
 
+  .lg\:ml-\[0px\]{
+    margin-left: 0px;
+  }
+
   .lg\:block{
     display: block;
   }
