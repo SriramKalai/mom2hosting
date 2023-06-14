@@ -37,8 +37,8 @@ function fetchData() {
       filterobject=productfilter(arr,perpage,pageNumber);
       listView(filterobject);
       totalitem();
-      console.log(products)
-      console.log(products["like"])
+      // console.log(products)
+      // console.log(products["like"])
   
       // console.log(products.products)
       
@@ -73,7 +73,7 @@ function likefetchData() {
     .then(response => response.json())
     .then(data => {
       likedata = data; 
-      console.log(likedata);
+      // console.log(likedata);
       like();
 
     })
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", function() {
             else{
             gridView(filterobject);}
             renderItems();
-            console.log(arr);
+            // console.log(arr);
           };
 
           if (checkedStateMap.has(brand)) {
@@ -599,7 +599,7 @@ document.addEventListener("DOMContentLoaded", function() {
               else{
               gridView(filterobject);}
               renderItems();
-              console.log(arr);
+              // console.log(arr);
             };
             listItem.appendChild(radio);
             const conditionText = document.createElement('span');
@@ -781,7 +781,7 @@ for (var i = 0; i < btns.length; i++) {
               else{
               gridView(filterobject);}
               renderItems();
-              console.log(arr);
+              // console.log(arr);
             };
   
             if (checkedStateMap.has(brand)) {
@@ -1060,7 +1060,7 @@ function starrating(x){
   else{
   gridView(filterobject);}
   renderItems();
-  console.log(arr);
+  // console.log(arr);
 
 }
 
@@ -1125,7 +1125,7 @@ applyButton.addEventListener('click', function() {
   arr.price = [minInput.value, maxInput.value];
   
   // Print the updated arr object in the console
-  console.log(arr);
+  // console.log(arr);
   lastpage();
   filterobject=productfilter(arr,perpage,pageNumber);
   
@@ -1137,7 +1137,7 @@ applyButton.addEventListener('click', function() {
   else{
   gridView(filterobject);}
 
-  console.log(arr);
+  // console.log(arr);
   
 
 });
@@ -1155,7 +1155,7 @@ function verifyContent() {
     arr.verified.pop();
   }
   lastpage();
-  console.log(arr);
+  // console.log(arr);
   filterobject=productfilter(arr,perpage,pageNumber);
   
   const buttonstatus=document.querySelector(".listview");
@@ -1166,7 +1166,7 @@ function verifyContent() {
   else{
   gridView(filterobject);}
 
-  console.log(arr);
+  // console.log(arr);
   
 }
 
@@ -1258,10 +1258,10 @@ var dropdown = document.getElementById("feaDropdown");
     
     if (selectedValue === "all") {
       arr.featured.pop();
-      console.log("All option selected");
+      // console.log("All option selected");
     } else if (selectedValue === "featured") {
       arr.featured.push("True");
-      console.log("Featured option selected");
+      // console.log("Featured option selected");
     }
     filterobject=productfilter(arr,perpage,pageNumber);  
     const buttonstatus=document.querySelector(".listview");
@@ -1284,16 +1284,16 @@ var dropdown = document.getElementById("feaDropdown");
     
     if (selectedValue === "six") {
       perpage=6;
-      console.log(perpage);
+      // console.log(perpage);
     } else if (selectedValue === "ten") {
       perpage=10;
-      console.log(perpage);
+      // console.log(perpage);
     }else if (selectedValue === "twenty") {
       perpage=20;
-      console.log(perpage);
+      // console.log(perpage);
     }else if (selectedValue === "fiften") {
       perpage=15;
-      console.log(perpage);
+      // console.log(perpage);
     }
     lastpage();
     firstpage();
@@ -1317,7 +1317,7 @@ var dropdown = document.getElementById("feaDropdown");
     // console.log(pageNumber);
     filterobject=productfilter(arr,perpage,pageNumber);
     const maxpage=  filterobject.pageNumbers.length
-    console.log(maxpage);
+    // console.log(maxpage);
     // pageNumber+=1;
     if (pageNumber< maxpage){
       pageNumber+=1;
@@ -1326,7 +1326,7 @@ var dropdown = document.getElementById("feaDropdown");
     firstpage();
     filterobject=productfilter(arr,perpage,pageNumber);  
     const buttonstatus=document.querySelector(".listview");
-    console.log(buttonstatus.classList)
+    // console.log(buttonstatus.classList)
     const value=buttonstatus.classList.contains("active");
 
     if (value){
@@ -1342,7 +1342,7 @@ var dropdown = document.getElementById("feaDropdown");
   var leftbutton =document.getElementById("leftpagebutton")
 
   leftbutton.addEventListener("click",function(){
-    console.log(pageNumber);
+    // console.log(pageNumber);
     if (pageNumber>1){
       pageNumber-=1;
     }
@@ -1464,7 +1464,7 @@ var dropdown = document.getElementById("feaDropdown");
               }
               else{
                 arr.manufacturers.push(brand);
-                console.log(arr.manufacturers);
+                // console.log(arr.manufacturers);
               }
               filterobject=productfilter(arr,perpage,pageNumber);
   
@@ -1476,7 +1476,7 @@ var dropdown = document.getElementById("feaDropdown");
               else{
               gridView(filterobject);}
               renderItems();
-              console.log(arr);
+              // console.log(arr);
             };
   
             if (checkedStateMap.has(brand)) {
@@ -1627,9 +1627,9 @@ function renderItems() {
 
 function removeItem(category, item) {
   const index = arr[category].indexOf(item);
-  console.log(index)
+  // console.log(index)
   arr[category].splice(index, 1);
-  console.log(item);
+  // console.log(item);
   selectedmanu.delete(item);
   selectedBrands.delete(item);
   selectedfeature.delete(item);
@@ -1695,7 +1695,7 @@ function ratingcheckAllCheckboxes() {
   const rating=[5,4,3,2];
   for (let i=0 ; i<rating.length ; i++){
     const starhide=document.getElementById(rating[i])
-    console.log(starhide.checked);
+    // console.log(starhide.checked);
     if (starhide.checked==true){
       starhide.checked=false;
     }
@@ -1709,7 +1709,7 @@ function ratingcheckAllCheckboxes() {
 const mobileButtonsContainer = document.getElementById("mobileButtons");
 
 function mobile(){
-  console.log(mobiledata[0]["header"])
+  // console.log(mobiledata[0]["header"])
 // Iterate through the header array and create buttons
 const skeletonLoader = document.querySelector('.skeleton-loader-title');
 
@@ -1749,7 +1749,7 @@ function createProductCard(product) {
 // Populate product cards
 const productContainer = document.getElementById("likeproductContainer");
 function like(){
-  console.log(likedata)
+  // console.log(likedata)
   const skeletonLoader = document.querySelector('.skeleton-loader-like');
   skeletonLoader.classList.add('hidden');
   likedata.forEach(product => {
@@ -1806,7 +1806,7 @@ function sortitems(){
     filterobject=productfilter(arr,perpage,pageNumber);
     sortnew.classList.add("hidden")
     sortold.classList.remove("hidden")
-    console.log(sortnew.classList,sortold.classList)
+    // console.log(sortnew.classList,sortold.classList)
     const buttonstatus=document.querySelector(".listview");
     const value=buttonstatus.classList.contains("active");
     if (value){
@@ -1846,13 +1846,13 @@ function showleftside(){
 function filtercountcheck(){
   filtercount=0;
     for (const property in arr) {
-      console.log(property);
+      // console.log(property);
       if (property !== 'price' && property !=='condition' && property !=="verified" && arr[property].length > 0 && property !=="featured" && property !=="type"){
           const length = arr[property].length;
           filtercount+=length;
       }
     }
-    console.log(filtercount)
+    // console.log(filtercount)
     const filtershow=document.querySelector(".filtercount")
     filtershow.innerHTML=`Filter (${filtercount})`
 }
@@ -1861,7 +1861,7 @@ function filtercountcheck(){
 
 //header filter
 function buttonfilter(value){
-  console.log(value);
+  // console.log(value);
   if(value=="ALL"){
     arr.type=["Tablets","Phones","Headphones","Camera","Laptop","Watch"];
   }
@@ -1872,7 +1872,7 @@ function buttonfilter(value){
     arr.type=[];
     arr.type.push(value);
   }
-  console.log(arr.type);
+  // console.log(arr.type);
   filterobject=productfilter(arr,perpage,pageNumber);  
   const buttonstatus=document.querySelector(".listview");
   const valuehead=buttonstatus.classList.contains("active");
