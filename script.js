@@ -41,7 +41,7 @@ function fetchData() {
       console.log(products["like"])
   
       // console.log(products.products)
-      mobile();
+      
       
     })
     .catch(error => {
@@ -58,6 +58,7 @@ function mobilefetchData() {
     .then(response => response.json())
     .then(data => {
       mobiledata = data; 
+      mobile();
     })
     .catch(error => {
       console.error('Error fetching JSON data:', error);
