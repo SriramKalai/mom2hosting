@@ -150,7 +150,8 @@ let arr={
   price:[0,10000],
   verified:[],
   featured:[],
-  manufacturers:[]
+  manufacturers:[],
+  type:[]
 }
 
 let perpage =6;
@@ -166,6 +167,7 @@ function productfilter(filterObj,perPage, pageNumber) {
 
   for (const product of products) {
     // console.log(product)
+    const typematch=filterObj.type.length ===0 || filterObj.type.includes(product.type)
     const brandMatch = filterObj.brand.length === 0 || filterObj.brand.includes(product.Brand);
     const manumatch=filterObj.manufacturers.length===0 || filterObj.manufacturers.includes(product.manufacturers)
     const verifiedMatch = filterObj.verified.length === 0 || filterObj.verified.includes(product.verified);
@@ -182,7 +184,7 @@ function productfilter(filterObj,perPage, pageNumber) {
     firstpage();
     // renderItems();
     
-  if(brandMatch && featureMatch && conditionMatch && ratingMatch&&priceMatch &&verifiedMatch &&featuredmatch && manumatch){
+  if(brandMatch && featureMatch && conditionMatch && ratingMatch&&priceMatch &&verifiedMatch &&featuredmatch && manumatch &&typematch){
     filteredProducts.push(product);
     // console.log(product)
   }
@@ -1574,14 +1576,14 @@ function renderItems() {
   let hasContent = false; 
 
   for (const category in arr) {
-    if (category !== 'price' && category !=='condition' && category !=="verified" && arr[category].length > 0 && category !=="featured") {
+    if (category !== 'price' && category !=='condition' && category !=="verified" && arr[category].length > 0 && category !=="featured" && category !=="type") {
       hasContent = true; 
       const categoryDiv = document.createElement('div');
       categoryDiv.classList.add('flex', 'items-center', 'mb-0');
 
       arr[category].forEach((item, index) => {
         const itemDiv = document.createElement('div');
-        itemDiv.classList.add('flex', 'items-center', 'mr-2','border-2','border-blue-500','px-2','py-1','mt-[20px]','rounded-md' ,'font-inter','text-[16px');
+        itemDiv.classList.add('flex', 'items-center', 'mr-2','border-2','border-blue-500','px-2','py-1','mt-[20px]','rounded-md' ,'font-inter','text-[16px]');
 
         const itemText = document.createElement('span');
         itemText.classList.add('mr-1');
@@ -1705,14 +1707,17 @@ function ratingcheckAllCheckboxes() {
 const mobileButtonsContainer = document.getElementById("mobileButtons");
 
 function mobile(){
-  // console.log(products["mobile"][0]["header"])
+  console.log(mobiledata[0]["header"])
 // Iterate through the header array and create buttons
 const skeletonLoader = document.querySelector('.skeleton-loader-title');
 
-    mobiledata[0].header.forEach(item => {
+    mobiledata[0]["header"].forEach(item => {
     const button = document.createElement("button");
     button.textContent = item;
+    button.value=item;
     button.classList.add("px-[16px]", "py-[6px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
+    // button.onclick=buttonfilter(item);
+    button.addEventListener('click', () => buttonfilter(item));
     mobileButtonsContainer.appendChild(button);
 });
 skeletonLoader.classList.add('hidden');
@@ -1847,3 +1852,27 @@ function filtercountcheck(){
     filtershow.innerHTML=`Filter (${filtercount})`
 }
 
+
+
+//header filter
+function buttonfilter(value){
+  console.log(value);
+  if (arr.type.length===0){
+    arr.type.push(value);
+  }
+  else{
+    arr.type=[];
+    arr.type.push(value);
+  }
+  console.log(arr.type);
+  filterobject=productfilter(arr,perpage,pageNumber);  
+  const buttonstatus=document.querySelector(".listview");
+  const valuehead=buttonstatus.classList.contains("active");
+  if (valuehead){
+  listView(filterobject);
+  }
+  else{
+  gridView(filterobject);}
+  renderItems();
+
+}
