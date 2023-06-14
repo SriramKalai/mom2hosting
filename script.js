@@ -645,9 +645,9 @@ for (var i = 0; i < btns.length; i++) {
     
   function  flexproduct(filterobject){
     let template = `
-      <div class="all_product cursor-pointer">
+      <div class="all_product">
       ${filterobject.products.map(product => `
-      <div class="card_outer">    
+      <div class="card_outer cursor-pointer">    
       <div class="image_outer ">
         <img src="${product.image_url}" class="w-[92px] h-[82px] md:h-[auto] md:w-[210px] max-w-none"  alt="${product.product_name}"/>
       </div>
@@ -1762,3 +1762,13 @@ function blueheartbutton(x) {
 
   };
 
+
+
+  // flag
+  // const options = document.querySelectorAll('#select-color .option input');
+
+  // options.forEach(option => {
+  //   option.addEventListener('change', () => {
+  //     document.getElementById('select-color').classList.toggle('open');
+  //   });
+  // });

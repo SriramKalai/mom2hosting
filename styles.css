@@ -2479,6 +2479,15 @@ fireworks--border: $fireworks--width/2; */
   background:#fffff0;
 }
 
+/* 
+.select-sim .options {
+  display: none;
+}
+
+.select-sim.open .options {
+  display: block;
+} */
+
 .hover\:bg-blue-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
