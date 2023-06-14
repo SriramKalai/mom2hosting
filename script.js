@@ -1772,3 +1772,76 @@ function blueheartbutton(x) {
   //     document.getElementById('select-color').classList.toggle('open');
   //   });
   // });
+
+
+
+  // Sort the items
+function sortitems(){
+  const sortnew=document.querySelector(".sortnew")
+  const sortold=document.querySelector(".sortold")
+  if (sortnew.classList.contains("hidden")){
+    products.reverse();
+    filterobject=productfilter(arr,perpage,pageNumber);
+    sortnew.classList.remove("hidden")
+    sortold.classList.add("hidden")
+    const buttonstatus=document.querySelector(".listview");
+    const value=buttonstatus.classList.contains("active");
+    if (value){
+    listView(filterobject);
+    }
+    else{
+    gridView(filterobject);}
+  }
+
+  else{
+    products.reverse();
+    filterobject=productfilter(arr,perpage,pageNumber);
+    sortnew.classList.add("hidden")
+    sortold.classList.remove("hidden")
+    console.log(sortnew.classList,sortold.classList)
+    const buttonstatus=document.querySelector(".listview");
+    const value=buttonstatus.classList.contains("active");
+    if (value){
+    listView(filterobject);
+    }
+    else{
+    gridView(filterobject);}
+  }
+
+}
+
+
+
+
+// show left side container
+let filtercount=0;
+function showleftside(){
+  const leftside=document.querySelector(".leftside")
+  const producthide=document.querySelector(".productcontainer")
+  const likecontainer=document.querySelector(".likecontainer")
+   if (leftside.classList.contains("hidden")){
+    leftside.classList.remove("hidden")
+    producthide.classList.add("hidden")
+    likecontainer.classList.add("hidden")
+   }
+   else{
+    leftside.classList.add("hidden")
+    producthide.classList.remove("hidden")
+    likecontainer.classList.remove("hidden")
+
+
+    for (const property in arr) {
+      const length = arr[property].length;
+      filtercount+=length;
+    }
+    filtercount-=2;
+    console.log(filtercount)
+    const filtershow=document.querySelector(".filtercount")
+    filtershow.innerHTML=`Filter(${filtercount})`
+   }
+}
+
+
+
+
+

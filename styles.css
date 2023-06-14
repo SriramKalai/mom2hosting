@@ -1210,6 +1210,10 @@ video {
   width: 100%;
 }
 
+.w-\[100px\]{
+  width: 100px;
+}
+
 .min-w-\[112px\]{
   min-width: 112px;
 }
@@ -2675,6 +2679,10 @@ fireworks--border: $fireworks--width/2; */
 
   .lg\:max-w-\[1180px\]{
     max-width: 1180px;
+  }
+
+  .lg\:justify-center{
+    justify-content: center;
   }
 
   .lg\:justify-between{

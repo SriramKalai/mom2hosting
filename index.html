@@ -39,16 +39,17 @@
                 </div>       
             </div>
         </div>
-        <div class="flex  w-full border-t-[2px] border-[#DEE2E7] mt-[18px] h-[50px] border-b-[2px] px-[10px] justify-between items-center gap-[1px] lg:hidden shrink-0">
-            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md ">
+        <div class="flex  w-full border-t-[2px] border-[#DEE2E7] mt-[18px] h-[50px] border-b-[2px] px-[10px] justify-between items-center gap-[1px] lg:hidden shrink-0 " >
+            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md " onclick="sortitems()">
                 <div class="flex items-center  justify-center text-center gap-[10px]">
-                <p class="mr-[5px] text-inter text-[16px]">Sort: New</p>
+                <p class="sortnew mr-[5px] text-inter text-[16px]">Sort: New</p>
+                <p class="sortold mr-[5px] text-inter text-[16px] hidden">Sort: Old</p>
                 <img src="images/sort.svg" class="w-[13px] h-[9px]" alt="sort icon">
                 </div>
             </button>  
-            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md shrink-0">
+            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md shrink-0" onclick="showleftside()">
                 <div class="flex items-center  justify-center text-center gap-[10px]">
-                <p class="mr-[5px] text-inter text-[16px]">Filter (3)</p>
+                <p class="filtercount mr-[5px] text-inter text-[16px]">Filter(0)</p>
                 <img src="images/filter.svg" class="w-[20px] h-[20px]" alt="filter">
                 </div>
             </button>       
@@ -241,10 +242,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="flex  justify-center">         
+            <div class="flex justify-center">         
              <!-- left side container -->
-                <div class="flex-col hidden lg:flex lg:w-[227px] lg:mt-[-2px]">
-                    <div class="flex flex-col">
+                <div class="leftside flex-col hidden lg:flex lg:w-[227px] lg:mt-[-2px]">
+                    <div class="hidden lg:flex flex-col">
                         <hr class="mt-[20px] h-[1px] bg-[#E0E0E0]">
                         <div class="flex justify-between">
                             <div class="font-semibold inline-block mt-[11px] font-inter text-[16px] mb-[20px] text-[#1C1C1C]">Category</div>
@@ -260,7 +261,7 @@
                             </ul>
                         </div>
                     </div>
-                    <hr class="mt-[24px] h-[1px] bg-[#E0E0E0]">
+                    <hr class="hidden lg:block mt-[24px] h-[1px] bg-[#E0E0E0]">
                     <div class="flex flex-col">
                         <div class="flex justify-between ">
                             <div class="font-semibold inline mt-[10px] font-inter text-[16px] mb-[22px] ml-[2px]">Brands</div>
@@ -422,7 +423,7 @@
             
     
             <!-- products container -->
-                <div class="lg:ml-8 w-full">
+                <div class="productcontainer lg:ml-8 w-full md:block">
                     <!-- product header -->
                     <div class="hidden lg:flex justify-between max-w-[920px] w-full h-16 bg-white items-center mt-[18px] border-[1px] rounded-md border-[#DADADA]">
                         <div class="ml-[24px]">
@@ -454,7 +455,7 @@
                     </div>
                     <div class="flex">
                         <div id="content" class="flex flex-wrap "></div>
-                        <p id="clearButton" class="ml-2 mt-[26px] text-blue-500 cursor-pointer font-bold hidden font-inter">Clear all filter</p>
+                        <div class="hidden lg:block"><p id="clearButton" class="ml-2 mt-[26px] text-blue-500 cursor-pointer font-bold hidden font-inter">Clear all filter</p></div>
                     </div>
                 
                     <br>
@@ -609,16 +610,18 @@
     </div>
 
     <!-- product container like -->
-    <div class="font-inter text-[#1C1C1C] font-semibold text-[18px] mt-[-76px] ml-[10px] md:hidden">You may also like</div>
-    <div class="skeleton-loader-like flex mt-[10px]">
-        <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
-        <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
-        <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
-    </div>
-    <div class="scrollbar pl-[20px] mb-[20px] mt-[20px] md:hidden">
-        <div id="likeproductContainer" class="flex gap-[8px]">          
+    <div class="likecontainer">
+        <div class="font-inter text-[#1C1C1C] font-semibold text-[18px] mt-[-76px] ml-[10px] md:hidden">You may also like</div>
+        <div class="skeleton-loader-like flex mt-[10px]">
+            <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
+            <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
+            <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
         </div>
-    </div>   
+        <div class="scrollbar pl-[20px] mb-[20px] mt-[20px] md:hidden">
+            <div id="likeproductContainer" class="flex gap-[8px]">          
+            </div>
+        </div>   
+    </div>
     <script src="script.js">
     </script>
 </body>
