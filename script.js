@@ -1844,6 +1844,6 @@ function filtercountcheck(){
     filtercount-=2;
     console.log(filtercount)
     const filtershow=document.querySelector(".filtercount")
-    filtershow.innerHTML=`Filter(${filtercount})`
+    filtershow.innerHTML=`Filter (${filtercount})`
 }
 
