@@ -647,11 +647,11 @@ for (var i = 0; i < btns.length; i++) {
     let template = `
       <div class="all_product">
       ${filterobject.products.map(product => `
-      <div class="card_outer cursor-pointer">    
-      <div class="image_outer ">
+      <div class="card_outer ">    
+      <div class="image_outer cursor-pointer">
         <img src="${product.image_url}" class="w-[92px] h-[82px] md:h-[auto] md:w-[210px] max-w-none"  alt="${product.product_name}"/>
       </div>
-      <div class="detail">
+      <div class="detail cursor-pointer">
           <p class="text-[16px] text-menutext font-inter md:font-medium">${product.product_name}</p>
           <div class="price mt-[5px] md:mt-4">             
               <p class="font-semibold text-[16px] md:text-[20px] font-inter text-[#1C1C1C] mt-[-4px]">${product.price}</p>
