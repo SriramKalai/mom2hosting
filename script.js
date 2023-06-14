@@ -42,8 +42,7 @@ function fetchData() {
   
       // console.log(products.products)
       mobile();
-      like();
-
+      
     })
     .catch(error => {
       console.error('Error fetching JSON data:', error);
@@ -54,7 +53,7 @@ function fetchData() {
 
 // mobile header
 function mobilefetchData() {
-  let uri = "https://crazy-sun-hat-cod.cyclic.app/mobile";
+  let uri = "https://stormy-cyan-cowboy-hat.cyclic.app/mobile";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
@@ -68,12 +67,14 @@ function mobilefetchData() {
 
 // like product
 function likefetchData() {
-  let uri = "https://crazy-sun-hat-cod.cyclic.app/like";
+  let uri = "https://anxious-underclothes-duck.cyclic.app/like";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
       likedata = data; 
       console.log(likedata);
+      like();
+
     })
     .catch(error => {
       console.error('Error fetching JSON data:', error);
@@ -1747,6 +1748,7 @@ function createProductCard(product) {
 // Populate product cards
 const productContainer = document.getElementById("likeproductContainer");
 function like(){
+  console.log(likedata)
   const skeletonLoader = document.querySelector('.skeleton-loader-like');
   skeletonLoader.classList.add('hidden');
   likedata.forEach(product => {
