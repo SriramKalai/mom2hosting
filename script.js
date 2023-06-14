@@ -1843,10 +1843,12 @@ function showleftside(){
 function filtercountcheck(){
   filtercount=0;
     for (const property in arr) {
-      const length = arr[property].length;
-      filtercount+=length;
+      console.log(property);
+      if (property !== 'price' && property !=='condition' && property !=="verified" && arr[property].length > 0 && property !=="featured" && property !=="type"){
+          const length = arr[property].length;
+          filtercount+=length;
+      }
     }
-    filtercount-=2;
     console.log(filtercount)
     const filtershow=document.querySelector(".filtercount")
     filtershow.innerHTML=`Filter (${filtercount})`
@@ -1859,6 +1861,9 @@ function buttonfilter(value){
   console.log(value);
   if (arr.type.length===0){
     arr.type.push(value);
+  }
+  else if(value=="ALL"){
+    arr.type=["Tablets","Phones","Headphones","Camera","Laptop","Watch"];
   }
   else{
     arr.type=[];
