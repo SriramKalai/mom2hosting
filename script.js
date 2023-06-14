@@ -1709,7 +1709,7 @@ function mobile(){
 // Iterate through the header array and create buttons
 const skeletonLoader = document.querySelector('.skeleton-loader-title');
 
-    mobiledata[0]['header'].forEach(item => {
+    mobiledata[0].header.forEach(item => {
     const button = document.createElement("button");
     button.textContent = item;
     button.classList.add("px-[16px]", "py-[6px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
