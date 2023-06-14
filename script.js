@@ -1859,11 +1859,11 @@ function filtercountcheck(){
 //header filter
 function buttonfilter(value){
   console.log(value);
-  if (arr.type.length===0){
-    arr.type.push(value);
-  }
-  else if(value=="ALL"){
+  if(value=="ALL"){
     arr.type=["Tablets","Phones","Headphones","Camera","Laptop","Watch"];
+  }
+  else if (arr.type.length===0){
+    arr.type.push(value);
   }
   else{
     arr.type=[];
