@@ -78,12 +78,12 @@ function likefetchData() {
 
 
 function headercontent(){
-  let uri ="http://127.0.0.1/data/db.json"
+  let uri ="https://crazy-sun-hat-cod.cyclic.app/allcontent"
   fetch(uri)
   .then (response => response.json())
   .then(data =>{
     navbarcontent=data;
-    // console.log(navbarcontent["allcontent"])
+    console.log(navbarcontent)
     renderheader();
   })
   .catch(error=>{
@@ -1946,11 +1946,11 @@ function renderheader(){
   const lastlineleft=document.querySelector('.lastlineleft')
   const mobileheader=document.querySelector('.mobileheader')
   
-  const searchbarcontent=navbarcontent["allcontent"]["searchbar"]['searchbar-icons']
-  const navbarleftcontent=navbarcontent["allcontent"]["navbar"]["navbar-left"]
-  const emailconent=navbarcontent["allcontent"]["emailcontent"]
-  const footer=navbarcontent["allcontent"]["footer"]
-  const mobilecontent=navbarcontent["allcontent"]["mobilecontent"]
+  const searchbarcontent=navbarcontent["searchbar"]['searchbar-icons']
+  const navbarleftcontent=navbarcontent["navbar"]["navbar-left"]
+  const emailconent=navbarcontent["emailcontent"]
+  const footer=navbarcontent["footer"]
+  const mobilecontent=navbarcontent["mobilecontent"]
 
   console.log(footer.lastline["year"])
   // header content
@@ -1964,7 +1964,7 @@ function renderheader(){
   })
 
   headerright.innerHTML=template;
-  logo.innerHTML=`<img src=${navbarcontent["allcontent"]["searchbar"]["searchbar-logo"]["logo-url"]} alt="brand logo">`
+  logo.innerHTML=`<img src=${navbarcontent["searchbar"]["searchbar-logo"]["logo-url"]} alt="brand logo">`
 
   //search bar 
   
