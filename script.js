@@ -2,22 +2,20 @@ let products;
 let filterobject;
 let mobiledata;
 let likedata ;
+let navbarcontent;
 const productCard = document.querySelector('.products');
 const categoryList = document.querySelector('.category-list');
-// const productCard_mobile=document.querySelector('.productsmobile')
 
-// skeleton
-const allSkeleton = document.querySelectorAll('.brand-sel')
 
-window.addEventListener('load', function() {
-  allSkeleton.forEach(item=> {
-    item.classList.remove('brand-sel')
-  })
-})
+
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
   // fetchAllData()
+  headercontent();
   likefetchData();
   mobilefetchData();
   fetchData();
@@ -36,12 +34,7 @@ function fetchData() {
       products = data; 
       filterobject=productfilter(arr,perpage,pageNumber);
       listView(filterobject);
-      totalitem();
-      // console.log(products)
-      // console.log(products["like"])
-  
-      // console.log(products.products)
-      
+      totalitem();  
       
     })
     .catch(error => {
@@ -81,6 +74,22 @@ function likefetchData() {
       console.error('Error fetching JSON data:', error);
     });
 }
+
+
+
+function headercontent(){
+  let uri ="http://127.0.0.1/data/db.json"
+  fetch(uri)
+  .then (response => response.json())
+  .then(data =>{
+    navbarcontent=data;
+    // console.log(navbarcontent["allcontent"])
+    renderheader();
+  })
+  .catch(error=>{
+    console.error("Error fetching Json data",error);
+  })
+}
 // document.addEventListener("DOMContentLoaded", likefetchData);
 
 
@@ -114,7 +123,18 @@ function likefetchData() {
 // }
 
 
-
+// view check
+function checklist(){
+  filterobject=productfilter(arr,perpage,pageNumber);
+  const buttonstatus=document.querySelector(".listview");
+  const value=buttonstatus.classList.contains("active");
+  if (value){
+    listView(filterobject);
+  }
+  else{
+    gridView(filterobject);
+  }
+}
 
 
 
@@ -184,6 +204,7 @@ function productfilter(filterObj,perPage, pageNumber) {
     // console.log(priceMatch);
     // console.log(brandMatch,featureMatch,conditionMatch,ratingMatch);
     firstpage();
+    filtercountcheck();
     // renderItems();
     
   if(brandMatch && featureMatch && conditionMatch && ratingMatch&&priceMatch &&verifiedMatch &&featuredmatch && manumatch &&typematch){
@@ -220,10 +241,7 @@ function productfilter(filterObj,perPage, pageNumber) {
   
   
 };
-
-// console.log(filteredProducts);
 // star
-
 function star(rating,id) {
     const arr=["one","two","three","four","five"]
     for (let i = 0; i < rating; i++) {
@@ -234,17 +252,29 @@ function star(rating,id) {
  }
 
 
-
-// window.addEventListener('DOMContentLoaded', renderProduct);
+// grid and flex view buton check
+// function buttonchangecheck(){
+//   const gridviewbtn=document.querySelector(".gridviewbtn")
+//   const flexviewbtn=document.querySelector(".listviewbtn")
+//   console.log(flexviewbtn)
+//   if (gridviewbtn.classList.contains("active")){
+//     gridviewbtn.classList.remove("active")
+//     flexviewbtn.classList.add("active")
+//   }else{
+//     gridviewbtn.classList.add("active")
+//     flexviewbtn.classList.remove("active")
+//   }
+  
+// }
 
 // list view of the product
-function listView(filterobject){
+function listView(){
+  // buttonchangecheck();
+  console.log("filterobject: ", filterobject);
   const productCard = document.querySelector('.products');
   productCard.classList.remove("productgird");
   productCard.classList.add("mt-[-25px]");
   productCard.classList.remove("mt-20px]");
-
-
   flexproduct(filterobject);
 
 }
@@ -253,15 +283,15 @@ function listView(filterobject){
 
 function gridView(){
   // perpage=9;
-  filterobject=productfilter(arr,perpage,pageNumber);
+  // buttonchangecheck();
   const productCard = document.querySelector('.products');
   productCard.classList.add("productgird");
   productCard.classList.remove("mt-[-25px]");
   productCard.classList.add("mt-20px]");
 
-  const active=document.querySelector(".listview");
-  active.classList.remove("active");
-  
+
+  // const grid=document.querySelector(".gridview");
+  // grid.classList.add("active");
   
   
 
@@ -434,15 +464,16 @@ document.addEventListener("DOMContentLoaded", function() {
             else{
               arr.brand.push(brand);
             }
-            filterobject=productfilter(arr,perpage,pageNumber);
+            checklist();
+            // filterobject=productfilter(arr,perpage,pageNumber);
 
-            const buttonstatus=document.querySelector(".listview");
-            const value=buttonstatus.classList.contains("active");
-            if (value){
-            listView(filterobject);
-            }
-            else{
-            gridView(filterobject);}
+            // const buttonstatus=document.querySelector(".listview");
+            // const value=buttonstatus.classList.contains("active");
+            // if (value){
+            // listView(filterobject);
+            // }
+            // else{
+            // gridView(filterobject);}
             renderItems();
             // console.log(arr);
           };
@@ -628,6 +659,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // button highlight it
 var container = document.getElementById("btnContainer");
 var btns = container.getElementsByClassName("btn");
+console.log(btns.length);
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
@@ -635,6 +667,8 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+
 
 
 
@@ -1592,9 +1626,10 @@ function renderItems() {
         itemText.textContent = item;
 
         const crossButton = document.createElement('button');
-        crossButton.classList.add('text-blue-500', 'font-bold','pl-[10px]','font-inter','w-[10px]' );
-        crossButton.innerHTML = '&times;';
+        crossButton.classList.add('text-[#8B96A5]','pl-[13px]','font-inter','w-[8px]',"py-1" );
+        crossButton.innerHTML = '&#x58;';
         crossButton.addEventListener('click', () => removeItem(category,item));
+        // crossButton.textContent="&#x58;"
 
         itemDiv.appendChild(itemText);
         itemDiv.appendChild(crossButton);
@@ -1711,18 +1746,27 @@ const mobileButtonsContainer = document.getElementById("mobileButtons");
 function mobile(){
   // console.log(mobiledata[0]["header"])
 // Iterate through the header array and create buttons
-const skeletonLoader = document.querySelector('.skeleton-loader-title');
+  const skeletonLoader = document.querySelector('.skeleton-loader-title');
 
-    mobiledata[0]["header"].forEach(item => {
+  const mobiledataLen = mobiledata[0].header.length;
+  mobileButtonsContainer.removeChild(skeletonLoader)
+  mobiledata[0]["header"].forEach((item, ind) => {
     const button = document.createElement("button");
     button.textContent = item;
     button.value=item;
     button.classList.add("px-[16px]", "py-[6px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
+    if(ind == 0) {
+      button.classList.add("ml-[16px]", "mr-1");
+    } else if(ind == mobiledataLen - 1) {
+      button.classList.add("mr-[16px]");
+    } else {
+      button.classList.add("mr-1")
+    }
     // button.onclick=buttonfilter(item);
     button.addEventListener('click', () => buttonfilter(item));
     mobileButtonsContainer.appendChild(button);
-});
-skeletonLoader.classList.add('hidden');
+  });
+  skeletonLoader.classList.add('hidden');
 }
 
 
@@ -1784,38 +1828,30 @@ function blueheartbutton(x) {
 
 
   // Sort the items
+
+const toggleOption = (currentOption) => {
+  return currentOption == "newest" ? "oldest" : "newest";
+}
+
+const titleCase = (str) => {
+  return str[0].toUpperCase() + str.substring(1, str.length)
+}
+
 function sortitems(){
-  const sortnew=document.querySelector(".sortnew")
-  const sortold=document.querySelector(".sortold")
-  if (sortnew.classList.contains("hidden")){
-    products.reverse();
-    filterobject=productfilter(arr,perpage,pageNumber);
-    sortnew.classList.remove("hidden")
-    sortold.classList.add("hidden")
-    const buttonstatus=document.querySelector(".listview");
-    const value=buttonstatus.classList.contains("active");
-    if (value){
-    listView(filterobject);
-    }
-    else{
-    gridView(filterobject);}
-  }
+  const sort = document.querySelector(".sort")
+  const currentSortOption = sort.getAttribute('data-value');
+  const newSortOption = toggleOption(currentSortOption)
 
-  else{
-    products.reverse();
-    filterobject=productfilter(arr,perpage,pageNumber);
-    sortnew.classList.add("hidden")
-    sortold.classList.remove("hidden")
-    // console.log(sortnew.classList,sortold.classList)
-    const buttonstatus=document.querySelector(".listview");
-    const value=buttonstatus.classList.contains("active");
-    if (value){
-    listView(filterobject);
-    }
-    else{
-    gridView(filterobject);}
-  }
+  products.reverse();
+  filterobject=productfilter(arr, perpage, pageNumber);
 
+  sort.setAttribute('data-value', newSortOption);
+  sort.textContent = titleCase(newSortOption);
+  
+  const buttonstatus=document.querySelector(".listview");
+  const value=buttonstatus.classList.contains("active");
+  
+  value ? listView(filterobject) : gridView(filterobject);
 }
 
 
@@ -1825,20 +1861,19 @@ function sortitems(){
 let filtercount=0;
 function showleftside(){
   const leftside=document.querySelector(".leftside")
-  const producthide=document.querySelector(".productcontainer")
-  const likecontainer=document.querySelector(".likecontainer")
-   if (leftside.classList.contains("hidden")){
-    leftside.classList.remove("hidden")
-    producthide.classList.add("hidden")
-    likecontainer.classList.add("hidden")
-   }
-   else{
-    leftside.classList.add("hidden")
-    producthide.classList.remove("hidden")
-    likecontainer.classList.remove("hidden")
-    filtercountcheck();
-   }
+  modal.showModal();
+
+  leftside.classList.contains("hidden")
+    ? leftside.classList.remove("hidden")
+    : filtercountcheck();
 }
+
+// apply button
+// const applybutton =document.addEventListener(".blueapply")
+function filterapply(){
+  modal.close();
+  filtercountcheck()
+};
 
 
 
@@ -1854,7 +1889,7 @@ function filtercountcheck(){
     }
     // console.log(filtercount)
     const filtershow=document.querySelector(".filtercount")
-    filtershow.innerHTML=`Filter (${filtercount})`
+    filtershow.textContent = filtercount
 }
 
 
@@ -1883,4 +1918,181 @@ function buttonfilter(value){
   gridView(filterobject);}
   renderItems();
 
+}
+
+
+
+// skeleton
+const allSkeleton = document.querySelectorAll('.brand-sel')
+
+window.addEventListener('load', function() {
+  allSkeleton.forEach(item=> {
+    item.classList.remove('brand-sel')
+  })
+})
+
+
+
+
+// adding the header from database
+
+function renderheader(){
+  const headerright = document.querySelector('.headerright'); 
+  const logo =document.querySelector('.brandlogo')
+  const navbarleft=document.querySelector('.navbarleft')
+  const email=document.querySelector('.emailcontent')
+  const footerleft=document.querySelector('.footerleft')
+  const footerright=document.querySelector('.footerrigth')
+  const lastlineleft=document.querySelector('.lastlineleft')
+  const mobileheader=document.querySelector('.mobileheader')
+  
+  const searchbarcontent=navbarcontent["allcontent"]["searchbar"]['searchbar-icons']
+  const navbarleftcontent=navbarcontent["allcontent"]["navbar"]["navbar-left"]
+  const emailconent=navbarcontent["allcontent"]["emailcontent"]
+  const footer=navbarcontent["allcontent"]["footer"]
+  const mobilecontent=navbarcontent["allcontent"]["mobilecontent"]
+
+  console.log(footer.lastline["year"])
+  // header content
+  let template=``
+  searchbarcontent.forEach((info,index)=>{
+    // console.log(info);
+    template +=`<a class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
+                    <img src=${info["icon-url"]} alt="message image">
+                    <div class="${index===2 ? "mt-[2px]" : "mt-[0px]"}">${info.content}</div>
+                </a>`
+  })
+
+  headerright.innerHTML=template;
+  logo.innerHTML=`<img src=${navbarcontent["allcontent"]["searchbar"]["searchbar-logo"]["logo-url"]} alt="brand logo">`
+
+  //search bar 
+  
+
+  // navbar content
+  let navbartemplate=``
+  navbarleftcontent.forEach((info,index)=>{
+    if(index===0){
+      navbartemplate+=`<li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[16px]" src="${info.menu_icon}" alt="menu icon"></button></li>`
+      console.log(info.menu_icon)
+    }
+    else if(index===6){
+      navbartemplate+=`
+        <li class="text-menutext font-inter font-medium  ml-[28px] mt-[-1px] cursor-pointer">
+            <select class="cursor-pointer"> 
+                <option value="${info.content}">${info.content}</option>
+            </select>
+        </li>`
+}
+    else{
+      navbartemplate+=` <li class="text-menutext font-inter font-medium ${index===1 ? "ml-[9px]" : "ml-[28px]"}"><a href="#">${info.content}</a></li>`
+    }
+  
+  });
+  navbarleft.innerHTML=navbartemplate;
+
+
+  // footer email
+  let emailtemplate=`
+    <div class="mb-2 font-inter text-[20px] font-semibold tracking-[-0.2px] mt-[-2px]">
+        <span>${emailconent.emailtitle}</span>
+    </div>
+    <div class="mb-4 mt-[-10px] font-inter text-[16px] tracking-[-0.2px]">
+      <span>${emailconent.emailsec}</span>
+    </div>
+    <div class="mt-[6px]">
+      <input type="text" placeholder="&#xf0e0;  ${emailconent.palcevalue}" class="emailicon w-[274px] h-[40px] p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+      <button class="bg-blue-500 hover:bg-blue-600 text-white  rounded-md w-[110px] h-[40px] ml-[4px] text-[16px]">${emailconent.button}</button>
+    </div>`
+  email.innerHTML=emailtemplate;
+
+
+  // footer left
+  console.log(footer.footerleftup["content"])
+  let footerlefttemplate =`
+      <img src="${footer.footerleftup["logo"]}" class="max-w-[150px]" alt="brand logo icon">
+      <div class="mt-4 font-inter text-[16px] tracking-[-0.2px] h-10px">
+          <div class="flex">
+              <p class="overflow-hidden max-h-[3.9rem] leading-[1.3rem] tracking-[-0.2px] w-[278px]">${footer.footerleftup["content"]}</p>  
+          </div>                     
+      </div>
+      <div class="flex justify-start mt-4 mb-10 gap-[12px]">`
+  footer.socialmedia.forEach((info)=>{
+    footerlefttemplate +=`<a href="#"><img src="${info["icon"]}" alt="social media icon"></a>`
+  })
+  footerlefttemplate+=`</div`
+
+  footerleft.innerHTML=footerlefttemplate
+
+
+  let footerrighttemplate=``;
+  let tempory=``
+  function appstore(img){
+    return `<a href="#" class="bg-black flex justify-center w-[124px] h-[42px] mt-[15px] px-[10px] py-[8px] rounded-md">
+              <img src="${img}" class="w-[101px] h-[25px]" alt="apple store icon">                      
+            </a>`
+  }
+
+  footer.footertext.forEach((info,index)=>{
+    if(index!=4){
+    info["content"].forEach((info,index)=>{
+      tempory+=`<li class="${index==0 ? "font-medium" : "footer-text"} ${index==0 ? "mb-[7px]": "mt-[3px]"} font-inter"><a herf="#">${info}</a></li>`
+    })
+    footerrighttemplate+=`
+      <div class="h-fit"> 
+        <ul>
+          ${tempory}
+        </ul>
+      </div>`
+    tempory=``
+  }else{
+    console.log(info)
+    footerrighttemplate+=`
+      <div class="h-fit">
+            <div class="flex flex-col">
+                <div class="font-medium font-inter">${info.content[0]}</div>
+                  ${appstore(info.content[1])}
+                  ${appstore(info.content[2])}
+            </div>
+      </div> `
+  }
+
+  })
+  footerright.innerHTML=footerrighttemplate;
+
+// last line left
+lastlineleft.innerHTML=`<p class="font-inter text-[16px] tracking-[-0.2px] mt-[25px]">${footer.lastline["year"]}</p>`
+ 
+
+// mobile header
+// console.log(mobilecontent)
+mobileheader.innerHTML=`
+<div class="flex gap-5">
+  <button class="ml-[-1px] "><img src="${mobilecontent[0]}" class="w-[16px] h-[16px]" alt="leftarrow"></button>
+  <div class="font-inter font-semibold text-[18px] ">${mobilecontent[1]}</div>
+  </div>
+  <div class="flex gap-[30px] mt-[4px] ">
+  <a><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
+  <a><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
+</div>  `
+  
+}
+
+
+
+
+
+
+
+// mobile button for grid and flex
+
+var container = document.getElementById("mobilebtnContainer");
+var btns = container.getElementsByClassName("mobilebtn");
+console.log(btns.length);
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("mobileactive");
+    current[0].className = current[0].className.replace(" mobileactive", "");
+    this.className += " mobileactive";
+  });
 }
