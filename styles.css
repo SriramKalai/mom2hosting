@@ -2705,6 +2705,15 @@ fireworks--border: $fireworks--width/2; */
     width: fit;
   }
 
+  .lg\:w-\[full\]{
+    width: full;
+  }
+
+  .lg\:w-fit{
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .lg\:max-w-\[1180px\]{
     max-width: 1180px;
   }
