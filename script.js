@@ -1861,6 +1861,7 @@ function sortitems(){
 let filtercount=0;
 function showleftside(){
   const leftside=document.querySelector(".leftside")
+  document.body.classList.add('overflow-hidden');
   modal.showModal();
 
   leftside.classList.contains("hidden")
@@ -1872,6 +1873,7 @@ function showleftside(){
 // const applybutton =document.addEventListener(".blueapply")
 function filterapply(){
   modal.close();
+  document.body.classList.remove('overflow-hidden');
   filtercountcheck()
 };
 
