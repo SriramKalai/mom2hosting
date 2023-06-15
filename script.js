@@ -1747,7 +1747,7 @@ function mobile(){
   // console.log(mobiledata[0]["header"])
 // Iterate through the header array and create buttons
   const skeletonLoader = document.querySelector('.skeleton-loader-title');
-
+  let activeButton = null;
   const mobiledataLen = mobiledata[0].header.length;
   mobileButtonsContainer.removeChild(skeletonLoader)
   mobiledata[0]["header"].forEach((item, ind) => {
@@ -1762,6 +1762,23 @@ function mobile(){
     } else {
       button.classList.add("mr-1")
     }
+    button.addEventListener('click', () => {
+      // Remove active class from the previous active button
+      if (activeButton) {
+        activeButton.classList.remove("mobactive");
+      }
+
+      // Add active class to the clicked button
+      button.classList.add("mobactive");
+
+      // Update the activeButton variable
+      activeButton = button;
+
+      buttonfilter(item);
+    });
+
+    mobileButtonsContainer.appendChild(button);
+  
     // button.onclick=buttonfilter(item);
     button.addEventListener('click', () => buttonfilter(item));
     mobileButtonsContainer.appendChild(button);

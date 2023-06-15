@@ -2468,6 +2468,10 @@ body.dialog-open {
   overflow: hidden;
 }
 
+.mobactive {
+  border: 2px solid #0D6EFD;
+}
+
 .hover\:bg-blue-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
@@ -2705,3 +2709,4 @@ body.dialog-open {
     font-size: 16px;
   }
 }
+  
