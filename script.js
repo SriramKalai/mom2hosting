@@ -46,7 +46,7 @@ function fetchData() {
 
 // mobile header
 function mobilefetchData() {
-  let uri = "https://stormy-cyan-cowboy-hat.cyclic.app/mobile";
+  let uri = "https://sore-blue-dove-sock.cyclic.app/mobile";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
@@ -61,7 +61,7 @@ function mobilefetchData() {
 
 // like product
 function likefetchData() {
-  let uri = "https://anxious-underclothes-duck.cyclic.app/like";
+  let uri = "https://sore-blue-dove-sock.cyclic.app/like";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
@@ -1964,7 +1964,7 @@ function renderheader(){
   const footerright=document.querySelector('.footerrigth')
   const lastlineleft=document.querySelector('.lastlineleft')
   const mobileheader=document.querySelector('.mobileheader')
-  const navbarright=document.querySelector('navbarright');
+  const navbarrightdrop=document.querySelector('navbarright');
   
   const searchbarcontent=navbarcontent["searchbar"]['searchbar-icons']
   const navbarleftcontent=navbarcontent["navbar"]["navbar-left"]
@@ -2097,9 +2097,19 @@ function renderheader(){
   </div>  `
   
   // navbar left first drop down
-
-  let firstdropdowncontent=``
   // console.log(navbarcontent["dropdown"])
+  // const dropdownfirst =(info)=>{
+  //   return `<option value="${info}">${info}</option>`
+  // }
+
+  // let firstdropdowncontent=`<select class="cursor-pointer">
+  //                             ${dropdownfirst(navbarcontent["dropdown"][0])}
+  //                             ${dropdownfirst(navbarcontent["dropdown"][1])}
+  //                             ${dropdownfirst(navbarcontent["dropdown"][2])}
+  //                           </select> `
+  // console.log(firstdropdowncontent)
+  // drop.innerHTML=firstdropdowncontent;                         
+ 
 
 
 }
