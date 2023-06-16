@@ -382,7 +382,7 @@ const renderCategories = (categories, limit) => {
   }
 
   if (categories.length > limit) {
-    categoryTemplate += `<li><a href="#" class="see-more text-textsee font-inter text-[16px]">See all</a></li>`;
+    categoryTemplate += `<li><a href="/#" class="see-more text-textsee font-inter text-[16px]">See all</a></li>`;
   }
 
   categoryList.innerHTML = categoryTemplate;
@@ -399,7 +399,7 @@ const renderAllCategories = (categories) => {
     categoryTemplate += `<li class="mb-[12px] font-inter text-[16px] cursor-pointer">${category}</li>`;
   });
 
-  categoryTemplate += `<li><a href="#" class="show-less text-textsee">Show Less</a></li>`;
+  categoryTemplate += `<li><a href="/#" class="show-less text-textsee">Show Less</a></li>`;
 
   categoryList.innerHTML = categoryTemplate;
 
@@ -1976,7 +1976,7 @@ function renderheader(){
   let template=``
   searchbarcontent.forEach((info,index)=>{
     // console.log(info);
-    template +=`<a class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
+    template +=`<a href="/#" class="flex flex-col gap-2 items-center text-xs text-gray-500 cursor-pointer">
                     <img src=${info["icon-url"]} alt="message image">
                     <div class="${index===2 ? "mt-[2px]" : "mt-[0px]"}">${info.content}</div>
                 </a>`
@@ -2004,7 +2004,7 @@ function renderheader(){
         </li>`
 }
     else{
-      navbartemplate+=` <li class="text-menutext font-inter font-medium ${index===1 ? "ml-[9px]" : "ml-[28px]"}"><a href="#">${info.content}</a></li>`
+      navbartemplate+=` <li class="text-menutext font-inter font-medium ${index===1 ? "ml-[9px]" : "ml-[28px]"}"><a href="/#">${info.content}</a></li>`
     }
   
   });
@@ -2037,7 +2037,7 @@ function renderheader(){
       </div>
       <div class="flex justify-start mt-4 mb-10 gap-[12px]">`
   footer.socialmedia.forEach((info)=>{
-    footerlefttemplate +=`<a href="#"><img src="${info["icon"]}" alt="social media icon"></a>`
+    footerlefttemplate +=`<a href="/#"><img src="${info["icon"]}" alt="social media icon"></a>`
   })
   footerlefttemplate+=`</div`
 
@@ -2047,7 +2047,7 @@ function renderheader(){
   let footerrighttemplate=``;
   let tempory=``
   function appstore(img,index){
-    return `<a href="#" class="bg-black flex justify-center w-[124px] h-[42px] ${index==1?"mt-[15px]":"mt-[8px]"} px-[10px] py-[8px] rounded-md">
+    return `<a href="/#" class="bg-black flex justify-center w-[124px] h-[42px] ${index==1?"mt-[15px]":"mt-[8px]"} px-[10px] py-[8px] rounded-md">
               <img src="${img}" class="w-[101px] h-[25px]" alt="apple store icon">                      
             </a>`
   }
@@ -2055,7 +2055,7 @@ function renderheader(){
   footer.footertext.forEach((info,index)=>{
     if(index!=4){
     info["content"].forEach((info,index)=>{
-      tempory+=`<li class="${index==0 ? "font-medium" : "footer-text"} ${index==0 ? "mb-[7px]": "mt-[3px]"} font-inter"><a herf="#">${info}</a></li>`
+      tempory+=`<li class="${index==0 ? "font-medium" : "footer-text"} ${index==0 ? "mb-[7px]": "mt-[3px]"} font-inter"><a href="/#">${info}</a></li>`
     })
     footerrighttemplate+=`
       <div class="h-fit"> 
@@ -2091,8 +2091,8 @@ mobileheader.innerHTML=`
   <div class="font-inter font-semibold text-[18px] ">${mobilecontent[1]}</div>
   </div>
   <div class="flex gap-[26px] mt-[4px] ">
-  <a><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
-  <a><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
+  <a href="/#"><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
+  <a herf="/#"><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
 </div>  `
   
 }

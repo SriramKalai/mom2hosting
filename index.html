@@ -61,8 +61,8 @@
         </div>  
        <div class="mobilebutton flex">
             <div id="mobilebtnContainer" class="ml-[7px] flex mr-[7px]">
-                <button class="mobilebtn justify-center items-center  flex cursor-pointer bg-white  w-[30px] h-[30px] border-[1px] rounded-l" onclick="gridView()"><i class="fa fa-th-large"></i></button>
-                <button class="justify-center items-center mobilebtn mobileactive flex btn cursor-pointer bg-white w-[30px] h-[30px] border-[1px] rounded-r" onclick="listView(filterobject)"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                           
+                <button class="mobilebtn justify-center items-center  flex cursor-pointer bg-white  w-[30px] h-[30px] border-[1px] rounded-l" onclick="gridView()" aria-label="grid button"><i class="fa fa-th-large"></i></button>
+                <button class="justify-center items-center mobilebtn mobileactive flex btn cursor-pointer bg-white w-[30px] h-[30px] border-[1px] rounded-r" onclick="listView(filterobject)" aria-label="list button"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                           
             </div>
         </div>
                     
@@ -71,7 +71,7 @@
     <div class="bg-#FFFFFF justify-center items-center hidden lg:flex px-[20px]">
         <div class="flex justify-between items-center lg:max-w-[1180px] w-full py-[22px]">
             <div class="flex w-full items-center">
-                <a>
+                <a href="/#">
                   <div class="brandlogo w-[120px] lg:w-[150px]">
                     <div class="flex justify-center items-center gap-[2px]  w-[120px] lg:w-[150px]">
                         <div class="bg-[#dddddd] w-[140px] h-[50px] rounded-[20px]"></div>                        
@@ -185,9 +185,9 @@
             <div class="flex justify-start">
                 <div class="flex">
                     <ul class="breadcrumb mt-[21px] hidden lg:block">
-                        <li class="font-inter text-[#8B96A5] mr-[3px] text-[16px] tracking-[-0.2px]"><a href="#">Home</a></li>
-                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]"><a href="#">Clothings</a></li>
-                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]"><a href="#">Men’s wear</a></li>
+                        <li class="font-inter text-[#8B96A5] mr-[3px] text-[16px] tracking-[-0.2px]"><a href="/#">Home</a></li>
+                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]"><a href="/#">Clothings</a></li>
+                        <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]"><a href="/#">Men’s wear</a></li>
                         <li class="font-inter text-[#8B96A5] mr-[5px] text-[16px] tracking-[-0.2px]">Summer clothing</li>
                     </ul>
                 </div>
@@ -407,8 +407,8 @@
                             </div>
                             <div >
                                 <div id="btnContainer" class="ml-[7px] flex mr-[7px]">
-                                    <button class="btn cursor-pointer bg-white w-[40px] h-[38px] border-[1px] rounded-l" onclick="gridView()"><i class="fa fa-th-large"></i></button>
-                                    <button class="listview btn cursor-pointer bg-white active w-[40px] h-[38px] border-[1px] rounded-r" onclick="listView(filterobject)"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                           
+                                    <button class="btn cursor-pointer bg-white w-[40px] h-[38px] border-[1px] rounded-l" onclick="gridView()" aria-label="grid button"><i class="fa fa-th-large"></i></button>
+                                    <button class="listview btn cursor-pointer bg-white active w-[40px] h-[38px] border-[1px] rounded-r" onclick="listView(filterobject)" aria-label="list button"><i class="fa fa-bars w-[18px] h-[18px]"></i></button>                           
                                 </div>
                             </div>
                         </div>    

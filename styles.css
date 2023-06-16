@@ -1086,6 +1086,10 @@ video {
   height: 35px;
 }
 
+.h-\[13px\]{
+  height: 13px;
+}
+
 .max-h-\[3\.9rem\]{
   max-height: 3.9rem;
 }
