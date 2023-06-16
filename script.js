@@ -1992,7 +1992,7 @@ function renderheader(){
   let navbartemplate=``
   navbarleftcontent.forEach((info,index)=>{
     if(index===0){
-      navbartemplate+=`<li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[16px]" src="${info.menu_icon}" alt="menu icon"></button></li>`
+      navbartemplate+=`<li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[13px]" src="${info.menu_icon}" alt="menu icon"></button></li>`
       console.log(info.menu_icon)
     }
     else if(index===6){
