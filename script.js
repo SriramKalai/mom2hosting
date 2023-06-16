@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function fetchData() {
-  let uri = "https://crazy-sun-hat-cod.cyclic.app/products";
+  let uri = "https://sore-blue-dove-sock.cyclic.app/products";
   fetch(uri) 
     .then(response => response.json())
     .then(data => {
@@ -78,7 +78,7 @@ function likefetchData() {
 
 
 function headercontent(){
-  let uri ="https://crazy-sun-hat-cod.cyclic.app/allcontent"
+  let uri ="https://sore-blue-dove-sock.cyclic.app/allcontent"
   fetch(uri)
   .then (response => response.json())
   .then(data =>{
@@ -417,7 +417,7 @@ const renderAllCategories = (categories) => {
 // new content
 let selectedBrands = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-  fetch('https://crazy-sun-hat-cod.cyclic.app/products')
+  fetch('https://sore-blue-dove-sock.cyclic.app/products')
     .then(response => response.json())
     .then(data => {
       const brandSet = new Set();
@@ -561,7 +561,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let selectedcondition = new Set();
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://crazy-sun-hat-cod.cyclic.app/products')
+    fetch('https://sore-blue-dove-sock.cyclic.app/products')
       .then(response => response.json())
       .then(data => {
         const conditionSet = new Set();
@@ -752,7 +752,7 @@ for (var i = 0; i < btns.length; i++) {
   
   let selectedfeature = new Set();
   document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://crazy-sun-hat-cod.cyclic.app/products')
+    fetch('https://sore-blue-dove-sock.cyclic.app/products')
       .then(response => response.json())
       .then(data => {
         const FeatureSet = [];
@@ -1453,7 +1453,7 @@ var dropdown = document.getElementById("feaDropdown");
 
   let selectedmanu = new Set();
   document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://crazy-sun-hat-cod.cyclic.app/products')
+    fetch('https://sore-blue-dove-sock.cyclic.app/products')
       .then(response => response.json())
       .then(data => {
         const manuSet = new Set();
@@ -1964,6 +1964,7 @@ function renderheader(){
   const footerright=document.querySelector('.footerrigth')
   const lastlineleft=document.querySelector('.lastlineleft')
   const mobileheader=document.querySelector('.mobileheader')
+  const navbarright=document.querySelector('navbarright');
   
   const searchbarcontent=navbarcontent["searchbar"]['searchbar-icons']
   const navbarleftcontent=navbarcontent["navbar"]["navbar-left"]
@@ -2002,7 +2003,7 @@ function renderheader(){
                 <option value="${info.content}">${info.content}</option>
             </select>
         </li>`
-}
+    }
     else{
       navbartemplate+=` <li class="text-menutext font-inter font-medium ${index===1 ? "ml-[9px]" : "ml-[28px]"}"><a href="/#">${info.content}</a></li>`
     }
@@ -2079,22 +2080,28 @@ function renderheader(){
   })
   footerright.innerHTML=footerrighttemplate;
 
-// last line left
-lastlineleft.innerHTML=`<p class="font-inter text-[16px] tracking-[-0.2px] mt-[25px]">${footer.lastline["year"]}</p>`
- 
-
-// mobile header
-// console.log(mobilecontent)
-mobileheader.innerHTML=`
-<div class="flex gap-5">
-  <button class="ml-[-1px] "><img src="${mobilecontent[0]}" class="w-[16px] h-[16px]" alt="leftarrow"></button>
-  <div class="font-inter font-semibold text-[18px] ">${mobilecontent[1]}</div>
-  </div>
-  <div class="flex gap-[26px] mt-[4px] ">
-  <a href="/#"><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
-  <a href="/#"><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
-</div>  `
+  // last line left
+  lastlineleft.innerHTML=`<p class="font-inter text-[16px] tracking-[-0.2px] mt-[25px]">${footer.lastline["year"]}</p>`
   
+
+  // mobile header
+  // console.log(mobilecontent)
+  mobileheader.innerHTML=`
+  <div class="flex gap-5">
+    <button class="ml-[-1px] "><img src="${mobilecontent[0]}" class="w-[16px] h-[16px]" alt="leftarrow"></button>
+    <div class="font-inter font-semibold text-[18px] ">${mobilecontent[1]}</div>
+    </div>
+    <div class="flex gap-[26px] mt-[4px] ">
+    <a href="/#"><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
+    <a href="/#"><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
+  </div>  `
+  
+  // navbar left first drop down
+
+  let firstdropdowncontent=``
+  // console.log(navbarcontent["dropdown"])
+
+
 }
 
 
