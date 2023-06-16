@@ -1619,7 +1619,7 @@ function renderItems() {
 
       arr[category].forEach((item, index) => {
         const itemDiv = document.createElement('div');
-        itemDiv.classList.add('flex', 'items-center', 'mr-2','border-2','border-blue-500','px-2','py-1','mt-[20px]','rounded-md' ,'font-inter','text-[16px]');
+        itemDiv.classList.add('flex', 'items-center', 'mr-2','border-2','border-blue-500','px-2','rounded-[5px]',"mt-[10px]" ,'font-inter','text-[16px]');
 
         const itemText = document.createElement('span');
         itemText.classList.add('mr-1');
@@ -2046,8 +2046,8 @@ function renderheader(){
 
   let footerrighttemplate=``;
   let tempory=``
-  function appstore(img){
-    return `<a href="#" class="bg-black flex justify-center w-[124px] h-[42px] mt-[15px] px-[10px] py-[8px] rounded-md">
+  function appstore(img,index){
+    return `<a href="#" class="bg-black flex justify-center w-[124px] h-[42px] ${index==1?"mt-[15px]":"mt-[8px]"} px-[10px] py-[8px] rounded-md">
               <img src="${img}" class="w-[101px] h-[25px]" alt="apple store icon">                      
             </a>`
   }
@@ -2070,8 +2070,8 @@ function renderheader(){
       <div class="h-fit">
             <div class="flex flex-col">
                 <div class="font-medium font-inter">${info.content[0]}</div>
-                  ${appstore(info.content[1])}
-                  ${appstore(info.content[2])}
+                  ${appstore(info.content[1],1)}
+                  ${appstore(info.content[2],2)}
             </div>
       </div> `
   }
@@ -2116,4 +2116,23 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
+
+// flag change
+// function updateLanguage(language) {
+//   document.getElementById('selectedLanguage').textContent = language;
+// }
+
+// document.addEventListener('click', function(event) {
+//   var dropdown = document.getElementById('languageDropdown');
+//   var target = event.target;
+
+//   if (!dropdown.contains(target) && target !== document.getElementById('languageBtn')) {
+//     dropdown.classList.add('hidden');
+//   }
+// });
+
+// document.getElementById('languageBtn').addEventListener('click', function() {
+//   var dropdown = document.getElementById('languageDropdown');
+//   dropdown.classList.toggle('hidden');
+// });
 

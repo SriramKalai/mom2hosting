@@ -532,12 +532,6 @@ video {
   width: 100%;
 }
 
-@media (min-width: 500px){
-  .container{
-    max-width: 500px;
-  }
-}
-
 @media (min-width: 580px){
   .container{
     max-width: 580px;
@@ -553,6 +547,12 @@ video {
 @media (min-width: 1024px){
   .container{
     max-width: 1024px;
+  }
+}
+
+@media (min-width: 1150px){
+  .container{
+    max-width: 1150px;
   }
 }
 
@@ -657,16 +657,16 @@ video {
   margin-left: 10px;
 }
 
+.ml-\[11px\]{
+  margin-left: 11px;
+}
+
 .ml-\[14px\]{
   margin-left: 14px;
 }
 
 .ml-\[16px\]{
   margin-left: 16px;
-}
-
-.ml-\[20px\]{
-  margin-left: 20px;
 }
 
 .ml-\[22px\]{
@@ -719,10 +719,6 @@ video {
 
 .mr-2\.5{
   margin-right: 0.625rem;
-}
-
-.mr-32{
-  margin-right: 8rem;
 }
 
 .mr-4{
@@ -1231,8 +1227,12 @@ video {
   cursor: pointer;
 }
 
-.grid-cols-\[110px\2c 154px\2c 150px\2c 164px\2c 125px\]{
-  grid-template-columns: 110px 154px 150px 164px 125px;
+.grid-cols-\[146px\2c 154px\2c 199px\2c 164px\2c 126px\]{
+  grid-template-columns: 146px 154px 199px 164px 126px;
+}
+
+.grid-cols-\[110px\2c 154px\2c 150px\2c 164px\2c 126px\]{
+  grid-template-columns: 110px 154px 150px 164px 126px;
 }
 
 .flex-col{
@@ -1307,16 +1307,16 @@ video {
   gap: 30px;
 }
 
-.gap-\[43px\]{
-  gap: 43px;
-}
-
 .gap-\[54px\]{
   gap: 54px;
 }
 
 .gap-\[8px\]{
   gap: 8px;
+}
+
+.gap-\[20px\]{
+  gap: 20px;
 }
 
 .overflow-hidden{
@@ -1466,6 +1466,11 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
+.bg-red-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1542,11 +1547,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-\[10px\]{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1572,8 +1572,16 @@ video {
   padding-bottom: 8px;
 }
 
+.pb-4{
+  padding-bottom: 1rem;
+}
+
 .pb-\[3px\]{
   padding-bottom: 3px;
+}
+
+.pl-\[10px\]{
+  padding-left: 10px;
 }
 
 .pl-\[20px\]{
@@ -1590,6 +1598,10 @@ video {
 
 .pt-0\.5{
   padding-top: 0.125rem;
+}
+
+.pt-3{
+  padding-top: 0.75rem;
 }
 
 .pt-\[20px\]{
@@ -2707,6 +2719,16 @@ body.dialog-open {
 
   .lg\:text-\[16px\]{
     font-size: 16px;
+  }
+}
+
+@media (min-width: 1150px){
+  .ld\:grid-cols-\[146px\2c 154px\2c 199px\2c 164px\2c 126px\]{
+    grid-template-columns: 146px 154px 199px 164px 126px;
+  }
+
+  .ld\:gap-\[55px\]{
+    gap: 55px;
   }
 }
   

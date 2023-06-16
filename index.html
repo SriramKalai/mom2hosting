@@ -17,14 +17,14 @@
         <!-- mobile view -->
     <div class="flex bg-white h-[56px] items-center lg:hidden">
         <div class="mobileheader flex mx-[20px] bg-white w-full justify-between">
-            <!-- <div class="flex gap-5">
-                <button class="ml-[-1px] "><img src="images/mobile_arrow.svg" class="w-[16px] h-[16px]" alt="leftarrow"></button>
-                <div class="font-inter font-semibold text-[18px] ">Mobile accessory </div>
+            <div class="flex gap-5">
+                <div class="w-[30px] h-[30px]  bg-[#dddddd] rounded-[25px]"></div>
+                <div class="w-[150px] h-[30px]  bg-[#dddddd] rounded-[25px]"></div>
             </div>
-            <div class="flex gap-[30px] mt-[4px] ">
-                <a><img src="images/cart_mobile.svg" class="w-[20px] h-[20px]" alt="cart image"></a>
-                <a><img src="images/profile_mobile.svg" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
-            </div>     -->
+            <div class="flex gap-[10px] ">
+                <div class="w-[30px] h-[30px]  bg-[#dddddd] rounded-[25px]"></div>
+                <div class="w-[30px] h-[30px]  bg-[#dddddd] rounded-[25px]"></div>
+            </div>    
         </div>
     </div>
     <div class="flex justify-center px-[15px] h-10 lg:hidden ">
@@ -37,7 +37,7 @@
         <div class="scrollbar  w-full">
             <div id="mobileButtons" class="flex w-full">
                 <div class="skeleton-loader-title lg:hidden px-[16px] w-full">
-                    <div class="h-[50px] w-full bg-[#dddddd] rounded-[25px] mt-[20px]"></div>
+                    <div class="h-[50px] w-full bg-[#dddddd] rounded-[25px] mt-[0px]"></div>
                 </div>
             </div>       
         </div>
@@ -94,7 +94,7 @@
     <div class="flex justify-center pl-[20px] pr-[20px]">
         <div class="bg-[#ffffff] hidden lg:block max-w-[1180px] w-full">
             <div class=" h-[52px] ">
-                <div class="flex py-4 justify-between">
+                <div class="flex pb-4 pt-3 justify-between">
                     <div class="flex justify-center gap-10 w-fit">
                         <ul class="navbarleft flex">
                         </ul>
@@ -387,7 +387,7 @@
                         </div>    
                     </div>
                     <div class="scrollbar lg:none">
-                        <div class="flex ml-[20px] lg:ml-[0px]">
+                        <div class="flex ml-[11px] lg:ml-[0px]">
                             <div id="content" class="flex flex-wrap "></div>
                             <div class="hidden lg:block"><p id="clearButton" class="ml-2 mt-[26px] text-[#0D6EFD] cursor-pointer  hidden font-inter">Clear all filter</p></div>
                         </div>
@@ -420,7 +420,7 @@
      <!-- page details -->
     
             <div class="justify-end hidden lg:flex mt-[-2px] max-w-[1440px]">
-                <div class="flex mr-32  mt-[-15px]">
+                <div class="flex  mt-[-15px]">
                 <div class="flex">
                     <select id="perpageproduct" class="w-[125px] h-[40px]  font-inter text-[16px] border-2 border-[#DEE2E7] rounded-md px-[6px] py-[3px] ">
                         <option value="six">Show 6</option>
@@ -450,12 +450,12 @@
         </div>
     </div>
     <!-- footer -->
-    <div class="justify-center  hidden lg:flex px-[20px]">
-        <div class="bg-white  h-[256px]">            
-            <div class="flex mt-10 gap-[43px]">
+    <div class="justify-center bg-white  hidden lg:flex">
+        <div class="  h-[256px] pl-[10px]  max-w-[1200px] min-w-[1024px] w-[100%]">            
+            <div class="flex mt-10 gap-[30px] ld:gap-[55px]">
                 <div class="footerleft flex flex-col mt-[4px]">
                 </div>
-                <div class="footerrigth grid grid-cols-[110px,154px,150px,164px,125px] h-fit">
+                <div class="footerrigth grid grid-cols-[110px,154px,150px,164px,126px] ld:grid-cols-[146px,154px,199px,164px,126px] h-fit">
                 </div>
             </div>
         </div>
@@ -463,14 +463,15 @@
 
     <!-- last line -->
     <div class="bg-[#EFF2F4]  hidden lg:flex  justify-center" >
-        <div class="flex justify-between h-[68px]  max-w-[1200px] min-w-[1024px] w-[100%]">
+        <div class="flex justify-between h-[68px]  max-w-[1200px] min-w-[1024px] w-[100%] px-[10px]">
             <div class="lastlineleft max-w-[1200px]">
             </div>
             <div class="flex gap-2 justify-center mr-[9px]">
                 <img class="w-6" src="images/US@2x.svg" alt="flag">
                 <p class="mt-[23px]">English</p>
-                <img class="w-3 ml-[4px]"src="images/up_arrow.svg" alt="up arrow icon">
+                <img class="w-3 ml-[4px]"src="images/up_arrow.svg" alt="up arrow icon">                
             </div>
+            
         </div>
     </div>
 
