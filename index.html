@@ -29,7 +29,7 @@
     </div>
     <div class="flex justify-center px-[15px] h-10 lg:hidden ">
         <div class="flex w-full">
-            <input class="searchbar border-[2px] border-[#DEE2E7] rounded-md w-full px-4 py-2 bg-[#F7FAFC]" type="text" placeholder="&#xf002; Search">
+            <input class="searchbar border-[2px] border-[#DEE2E7] rounded-md w-full pl-[10px] pr-4 py-2 bg-[#F7FAFC]" type="text" placeholder="&#xf002; &nbsp; Search">
         </div>
     </div>
     
@@ -37,23 +37,23 @@
         <div class="scrollbar  w-full">
             <div id="mobileButtons" class="flex w-full">
                 <div class="skeleton-loader-title lg:hidden px-[16px] w-full">
-                    <div class="h-[50px] w-full bg-[#dddddd] rounded-[25px] mt-[0px]"></div>
+                    <div class="h-[38px] w-full bg-[#dddddd] rounded-[20px] mt-[0px]"></div>
                 </div>
             </div>       
         </div>
     </div>
 
     
-    <div class="flex  w-full border-y-[2px] border-[#DEE2E7] mt-[18px] h-[50px] px-[10px] justify-between items-center gap-[1px] lg:hidden" >
+    <div class="flex  w-full border-y-[2px] border-[#DEE2E7] mt-[17px] h-[50px] px-[10px] justify-between items-center gap-[1px] lg:hidden" >
         <div class="flex gap-1">
-            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md " onclick="sortitems()">
-                <div class="flex items-center  justify-center text-center gap-[10px]">
+            <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md pr-[7px]" onclick="sortitems()">
+                <div class="flex items-center  justify-end text-center gap-[13px]">
                 <p class="mr-[5px] text-inter text-[13px] text[#1C1C1C] font-medium">Sort: <span class="sort" data-value="newest">Newest</span></p>
                 <img src="images/sort.svg" class="w-[13px] h-[9px]" alt="sort icon">
                 </div>
             </button>  
             <button class="w-[135px] h-[30px]  border-[2px] border-[#DEE2E7] rounded-md shrink-0" onclick="showleftside()">
-                <div class="flex items-center  justify-center text-center gap-[10px]">
+                <div class="flex items-center  justify-end text-center pr-[4px] gap-[24px]">
                 <p class="mr-[5px] text-inter text-[13px] text[#1C1C1C] font-medium">Filter (<span class="filtercount">0</span>)</p>
                 <img src="images/filter.svg" class="w-[20px] h-[20px]" alt="filter">
                 </div>
@@ -117,10 +117,17 @@
                 <div class="flex pb-4 pt-3 justify-between">
                     <div class="flex justify-center gap-10 w-fit">
                         <ul class="navbarleft flex">
+                            <li class="bg-[#dddddd] w-[22px] h-[22px] rounded-md ml-[9px]"></li>
+                            <li class="navbarsk"></li>
+                            <li class="navbarsk"></li>
+                            <li class="navbarsk"></li>
+                            <li class="navbarsk"></li>
+                            <li class="navbarsk"></li>
+                            <li class="navbarsk"></li>
                         </ul>
                     </div>
                 
-                    <div class="flex gap-[54px] ">
+                    <div class="flex gap-[40px] ">
                         <div class="flex justify-center font-inter text-[#1C1C1C] text-[16px] font-medium ">
                             <select class="cursor-pointer">
                                 <option value="all">English, USD</option>
@@ -408,8 +415,8 @@
                     </div>
                     <div class="scrollbar lg:none">
                         <div class="flex ml-[11px] lg:ml-[0px]">
-                            <div id="content" class="flex flex-wrap "></div>
-                            <div class="hidden lg:block"><p id="clearButton" class="ml-2 mt-[26px] text-[#0D6EFD] cursor-pointer  hidden font-inter">Clear all filter</p></div>
+                            <div id="content" class="flex flex-wrap"></div>
+                            <div class="hidden lg:block"><p id="clearButton" class="ml-2 mt-[16px] text-[#0D6EFD] cursor-pointer  hidden font-inter">Clear all filter</p></div>
                         </div>
                     </div>
                     
@@ -419,7 +426,7 @@
     
                     <!-- product list -->
                     
-                    <div class="products mt-[-25px] ">
+                    <div class="products mt-[-32px] lg:mt-[-25px] ">
                         <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
                         <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
@@ -474,7 +481,7 @@
         <div class="emailcontent flex  flex-col items-center justify-center py-10">
             <div class="bg-[#dddddd] w-[280px] h-[28px] rounded-[20px]"></div>
             <div class="bg-[#dddddd] w-[610px] h-[24px] rounded-[20px] mt-[4px]"></div>
-            <div class="bg-[#dddddd] w-[380px] h-[40px] rounded-[20px] mt-[4px]"></div>
+            <div class="bg-[#dddddd] w-[380px] h-[40px] rounded-[20px] mt-[20px]"></div>
         </div>
     </div>
     <!-- footer -->
@@ -561,9 +568,9 @@
         <div class="skeleton-loader-like flex mt-[10px]">
             <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
             <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
-            <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div>
+            <!-- <div class="h-[210px] md:hidden w-[150px] ml-[10px] bg-[#dddddd] rounded-[25px]"></div> -->
         </div>
-        <div class="scrollbar pl-[20px] mb-[20px] mt-[20px] md:hidden">
+        <div class="scrollbar pl-[10px] mb-[20px] mt-[17px] md:hidden">
             <div id="likeproductContainer" class="flex gap-[8px]">          
             </div>
         </div>   

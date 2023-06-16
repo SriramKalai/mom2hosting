@@ -273,8 +273,8 @@ function listView(){
   console.log("filterobject: ", filterobject);
   const productCard = document.querySelector('.products');
   productCard.classList.remove("productgird");
-  productCard.classList.add("mt-[-25px]");
-  productCard.classList.remove("mt-20px]");
+  productCard.classList.add("lg:mt-[-25px]");
+ 
   flexproduct(filterobject);
 
 }
@@ -286,8 +286,8 @@ function gridView(){
   // buttonchangecheck();
   const productCard = document.querySelector('.products');
   productCard.classList.add("productgird");
-  productCard.classList.remove("mt-[-25px]");
-  productCard.classList.add("mt-20px]");
+  productCard.classList.remove("lg:mt-[-25px]");
+  productCard.classList.add("mt-[0px]");
 
 
   // const grid=document.querySelector(".gridview");
@@ -315,7 +315,7 @@ function gridproduct(filterobject){
                     <del class="ml-[8px] text-[16px] pt-0.5 font-inter text-[#8B96A5]">${product.discount}</del>
                 </div>
                 <div class="flex">
-                      <div class="star">
+                      <div class="star tracking-[-1.5px]">
                           <span class="fa fa-star emptystar" id="one${product.product_id}"></span>
                           <span class="fa fa-star emptystar" id="two${product.product_id}"></span>
                           <span class="fa fa-star emptystar" id="three${product.product_id}"></span>
@@ -329,7 +329,7 @@ function gridproduct(filterobject){
                 </div>
               </div>
               <div class="bg-[#FFFFFF]  hidden lg:flex">
-                  <div class="button one inactive mobile button--secondary  h-fit drop-shadow-xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheartbutton(${product.product_id})" id="${product.product_id}button">
+                  <button class="button one inactive mobile button--secondary  h-fit drop-shadow-xl  hidden lg:flex justify-center items-center border-[2px] border-[#DEE2E7]" onclick="blueheartbutton(${product.product_id})" id="${product.product_id}button">
                       <div class="btn__effect">
                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14.5 0.824951C12.76 0.824951 11.09 1.63495 10 2.91495C8.91 1.63495 7.24 0.824951 5.5 0.824951C2.42 0.824951 0 3.24495 0 6.32495C0 10.105 3.4 13.185 8.55 17.865L10 19.175L11.45 17.855C16.6 13.185 20 10.105 20 6.32495C20 3.24495 17.58 0.824951 14.5 0.824951ZM10.1 16.375L10 16.475L9.9 16.375C5.14 12.065 2 9.21495 2 6.32495C2 4.32495 3.5 2.82495 5.5 2.82495C7.04 2.82495 8.54 3.81495 9.07 5.18495H10.94C11.46 3.81495 12.96 2.82495 14.5 2.82495C16.5 2.82495 18 4.32495 18 6.32495C18 9.21495 14.86 12.065 10.1 16.375Z" fill="#0D6EFD"/>
@@ -337,7 +337,7 @@ function gridproduct(filterobject){
   
                           <svg class="heart-full icon-svg icon-svg--size-4 icon-svg--color-blue" viewBox="0 0 19.2 18.5" aria-hidden="true" focusable="false"><path d="M9.66 18.48a4.23 4.23 0 0 1-2.89-1.22C.29 10.44-.12 7.79.02 5.67.21 2.87 1.95.03 5.42.01c1.61-.07 3.16.57 4.25 1.76A5.07 5.07 0 0 1 13.6 0c2.88 0 5.43 2.66 5.59 5.74.2 4.37-6.09 10.79-6.8 11.5-.71.77-1.7 1.21-2.74 1.23z"></path></svg>
                       </div>
-                  </div>
+                  </button>
               </div> 
 
         </div>
@@ -695,18 +695,18 @@ for (var i = 0; i < btns.length; i++) {
               <p class="font-semibold text-[16px] md:text-[20px] font-inter text-[#1C1C1C] mt-[-4px]">${product.price}</p>
               <del class="ml-[8px]  mt-[-4px] lg:mt-[0px] text-base font-inter text-[#8B96A5]">${product.discount}</del>
           </div>
-          <div class="mt-[2px] md:flex">
+          <div class="mt-[-px] lg:mt-[2px] md:flex">
               <div class="flex items-center">
-                <div class="star ">
+                <div class="star tracking-[-1.5px]">
                     <span class="fa fa-star emptystar" id="one${product.product_id}"></span>
                     <span class="fa fa-star emptystar" id="two${product.product_id}"></span>
                     <span class="fa fa-star emptystar" id="three${product.product_id}"></span>
                     <span class="fa fa-star emptystar" id="four${product.product_id}"></span>
                     <span class="fa fa-star emptystar" id="five${product.product_id}"></span>
                 </div>
-                <p class="text-base text-rating-color ml-[8px] md:ml-4">${product.rating}</p>
-                <img class="md:ml-3 md:mr-2.5 ml-[8px] mr-[8px]" src="Images/dot.svg" alt="dot"/>
-                <p class="font-inter text-[#8B96A5] text-[13px] lg:text-[16px] items-center">${product.total_order}<span class="md:ml-1.5">orders</span></p>
+                <p class="text-base text-rating-color ml-14px] md:ml-4">${product.rating}</p>
+                <img class="mt-[4px] md:mt-[0px]md:ml-3 md:mr-[13px] ml-[15px] md:ml-[8px] mr-[8px]" src="Images/dot.svg" alt="dot"/>
+                <p class="font-inter mt-[3px] md:mt-[0px] text-[#8B96A5] text-[13px] lg:text-[16px] items-center">${product.total_order}<span class="ml-[5px] md:ml-1.5">orders</span></p>
                 <img class="mr-2.5 ml-2.5 hidden md:block"src="Images/dot.svg" alt="dot" />
               </div>
                 <p class="text-shipping font-inter text-[13px] md:text-[16px]">Free Shipping</p>
@@ -1754,7 +1754,7 @@ function mobile(){
     const button = document.createElement("button");
     button.textContent = item;
     button.value=item;
-    button.classList.add("px-[16px]", "py-[6px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
+    button.classList.add("px-[16px]", "py-[4px]", "bg-[#EFF2F4]", "text-[#0D6EFD]", "rounded", "text-inter","text-[18px]" );
     if(ind == 0) {
       button.classList.add("ml-[16px]", "mr-1");
     } else if(ind == mobiledataLen - 1) {
@@ -1794,7 +1794,7 @@ function createProductCard(product) {
   const card = document.createElement("div");
   // card.classList.add("max-w-xs", "mr-4", "flex-shrink-0");
   card.innerHTML = `
-    <div class="bg-white flex justify-center flex-col rounded-lg border-[2px] overflow-hidden border-[#DEE2E7] w-[150px]">
+    <div class="bg-white flex justify-center flex-col rounded-lg border-[2px] overflow-hidden border-[#DEE2E7] w-[150px] h-[220px]">
     <div class="flex justify-center pt-[20px]">
       <img src="${product.image_url}" alt="${product.product_name}" class="min-w-[112px] w-[80%]">
     </div>
@@ -2090,7 +2090,7 @@ mobileheader.innerHTML=`
   <button class="ml-[-1px] "><img src="${mobilecontent[0]}" class="w-[16px] h-[16px]" alt="leftarrow"></button>
   <div class="font-inter font-semibold text-[18px] ">${mobilecontent[1]}</div>
   </div>
-  <div class="flex gap-[30px] mt-[4px] ">
+  <div class="flex gap-[26px] mt-[4px] ">
   <a><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
   <a><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
 </div>  `
