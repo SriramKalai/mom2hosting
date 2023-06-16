@@ -1992,7 +1992,7 @@ function renderheader(){
   let navbartemplate=``
   navbarleftcontent.forEach((info,index)=>{
     if(index===0){
-      navbartemplate+=`<li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[13px]" src="${info.menu_icon}" alt="menu icon"></button></li>`
+      navbartemplate+=`<li><button><img class="mt-[2px] ml-[5px] w-[18px] h-[12px]" src="${info.menu_icon}" alt="menu icon"></button></li>`
       console.log(info.menu_icon)
     }
     else if(index===6){
@@ -2092,7 +2092,7 @@ mobileheader.innerHTML=`
   </div>
   <div class="flex gap-[26px] mt-[4px] ">
   <a href="/#"><img src="${mobilecontent[2]}" class="w-[20px] h-[20px]" alt="cart image"></a>
-  <a herf="/#"><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
+  <a href="/#"><img src="${mobilecontent[3]}" class="w-[16px] h-[16px] mt-[1px]" alt="mobile-profile"></a>
 </div>  `
   
 }
