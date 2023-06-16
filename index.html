@@ -72,9 +72,13 @@
         <div class="flex justify-between items-center lg:max-w-[1180px] w-full py-[22px]">
             <div class="flex w-full items-center">
                 <a>
-                  <div class="brandlogo w-[120px] lg:w-[150px]"></div> 
+                  <div class="brandlogo w-[120px] lg:w-[150px]">
+                    <div class="flex justify-center items-center gap-[2px]  w-[120px] lg:w-[150px]">
+                        <div class="bg-[#dddddd] w-[140px] h-[50px] rounded-[20px]"></div>                        
+                    </div>
+                  </div> 
                 </a> 
-                <div class="flex border border-[#0D6EFD] border-solid rounded-lg flex-1 md:ml-[23px] lg:ml-[46px] max-w-[670px] lg:mt-[-2px]">
+                <div class="flex border border-[#0D6EFD] border-solid rounded-lg flex-1 md:ml-[23px] lg:ml-[46px] max-w-[670px] lg:mt-[-6px]">
                 <div class="searchbaricon"></div>
                      <input type="text" placeholder="Search" class="border border-[#0D6EFD] border-solid p-[10px] rounded-s-lg placeholder-gray-500 font-normal flex-1">
                     <select class="border border-[#0D6EFD] border-solid w-[145px] px-[10px] ">
@@ -83,7 +87,23 @@
                     <button class="cursor-pointer py-[10px] lg:mt[-2px] px-[23px] bg-[#0D6EFD] font-inter text-[16px] text-white rounded-e-lg border border-[#0D6EFD] border-solid">Search</button>
                 </div>
             </div>
-            <div class="flex headerright gap-[24px] md:ml-[44px] lg:ml-[87px]  shrink-0">
+            <div class="flex headerright gap-[24px] md:ml-[44px] lg:ml-[87px] shrink-0">
+                <div class="profilerightsk">
+                    <div class="profileimagesk"></div>
+                    <div class="profiletext"></div>
+                </div>
+                <div class="profilerightsk">
+                    <div class="profileimagesk"></div>
+                    <div class="profiletext"></div>
+                </div>
+                <div class="profilerightsk">
+                    <div class="profileimagesk"></div>
+                    <div class="profiletext"></div>
+                </div>
+                <div class="profilerightsk">
+                    <div class="profileimagesk"></div>
+                    <div class="profiletext"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -400,17 +420,17 @@
                     <!-- product list -->
                     
                     <div class="products mt-[-25px] ">
-                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
-                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
-                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
-                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
-                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
-                        <div class="h-[110px] md:h-[250px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
+                        <div class="h-[110px] md:h-[220px] w-full mt-[10px] bg-[#dddddd] rounded-[25px]">
                         </div>
                     </div>    
                 </div>        
@@ -432,10 +452,15 @@
                         <img src="images/left_arrow.svg" class="notactiveleft w-[8px] h-[16px]" alt="arrow icon">
                         <img class="activeleft hidden w-[14px] h-[16px]" src="images/left_active.svg" alt="arrow icon">                          
                     </button>
-                    <div id="pageNumbers" class="mt-2 flex"></div>
+                    <div id="pageNumbers" class="mt-2 flex">
+                        <div class="pagenumsk"></div>
+                        <div class="pagenumsk"></div>
+                        <div class="pagenumsk"></div>
+                    </div>
                     <button class="bg-white w-44px h-10 flex justify-center items-center border-2 border-[#DEE2E7] rounded-md ml-[-2px]" id="rightpagebuttton">
                         <img class="activeright w-[8px] h-[16px]" src="images/right_arrow.svg" alt="arrow icon">
-                    <img class="notactiverigth hidden w-[14px] h-[16px]" src="images/right_notactive.svg" alt="arrow icon">       
+                        
+                        <img class="notactiverigth hidden w-[14px] h-[16px]" src="images/right_notactive.svg" alt="arrow icon">       
                     </button>
                 </div>
                 </div>
@@ -447,6 +472,9 @@
     <!-- email subscribe -->
     <div class=" bg-[#EFF2F4] w-full h-[190px] mt-[-6px] hidden lg:block">
         <div class="emailcontent flex  flex-col items-center justify-center py-10">
+            <div class="bg-[#dddddd] w-[280px] h-[28px] rounded-[20px]"></div>
+            <div class="bg-[#dddddd] w-[610px] h-[24px] rounded-[20px] mt-[4px]"></div>
+            <div class="bg-[#dddddd] w-[380px] h-[40px] rounded-[20px] mt-[4px]"></div>
         </div>
     </div>
     <!-- footer -->
@@ -454,6 +482,15 @@
         <div class="  h-[256px] pl-[10px]  max-w-[1200px] min-w-[1024px] w-[100%]">            
             <div class="flex mt-10 gap-[30px] ld:gap-[55px]">
                 <div class="footerleft flex flex-col mt-[4px]">
+                    <div class="bg-[#dddddd] w-[140px] h-[50px] rounded-[20px]"></div>
+                    <div class="bg-[#dddddd] w-[280px] h-[40px] rounded-[20px] mt-[10px]"></div>
+                    <div class="flex gap-[12px] mt-[16px]">
+                        <div class="socialmediask"></div>
+                        <div class="socialmediask"></div>
+                        <div class="socialmediask"></div>
+                        <div class="socialmediask"></div>
+                        <div class="socialmediask"></div>
+                    </div>
                 </div>
                 <div class="footerrigth grid grid-cols-[110px,154px,150px,164px,126px] ld:grid-cols-[146px,154px,199px,164px,126px] h-fit">
                 </div>
