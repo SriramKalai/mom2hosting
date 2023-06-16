@@ -704,7 +704,7 @@ for (var i = 0; i < btns.length; i++) {
                     <span class="fa fa-star emptystar" id="four${product.product_id}"></span>
                     <span class="fa fa-star emptystar" id="five${product.product_id}"></span>
                 </div>
-                <p class="text-base text-rating-color ml-14px] md:ml-4">${product.rating}</p>
+                <p class="text-base text-rating-color ml-[14px] md:ml-4">${product.rating}</p>
                 <img class="mt-[4px] md:mt-[0px]md:ml-3 md:mr-[13px] ml-[15px] md:ml-[8px] mr-[8px]" src="Images/dot.svg" alt="dot"/>
                 <p class="font-inter mt-[3px] md:mt-[0px] text-[#8B96A5] text-[13px] lg:text-[16px] items-center">${product.total_order}<span class="ml-[5px] md:ml-1.5">orders</span></p>
                 <img class="mr-2.5 ml-2.5 hidden md:block"src="Images/dot.svg" alt="dot" />
